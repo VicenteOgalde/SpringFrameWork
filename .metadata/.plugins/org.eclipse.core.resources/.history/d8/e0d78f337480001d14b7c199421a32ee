@@ -1,0 +1,8 @@
+package cl.vicoga.IoC;
+
+public class EmployeeBoss {
+
+	public String getTask() {
+		return "important tasks";
+	}
+}
