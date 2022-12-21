@@ -16,9 +16,10 @@ public class EmployeeImpl {
 		System.out.println(emp.getTask());
 		System.out.println(emp.getReport());
 		context.close();*/
-		Employee emp=context.getBean("MeEmployeeClerk",Employee.class);
+		EmployeeClerk emp=context.getBean("MeEmployeeClerk",EmployeeClerk.class);
 		System.out.println(emp.getTask());
 		System.out.println(emp.getReport());
+		System.out.println(emp.getEmail());
 	}
 
 }
