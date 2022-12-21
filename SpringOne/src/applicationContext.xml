@@ -8,6 +8,9 @@
     http://www.springframework.org/schema/context 
     http://www.springframework.org/schema/context/spring-context-3.1.xsd
 ">
+<!-- Dependency injection from external file -->
+<context:property-placeholder location="classpath:dataCompany.properties"/>
+
 	<!-- Dependency creation -->
 	<bean id="meReport" class="cl.vicoga.IoC.ReportCreationImpl">
 	</bean>
@@ -15,11 +18,16 @@
 	<bean id="meEmployee" class="cl.vicoga.IoC.EmployeeBoss">
 		<constructor-arg ref="meReport">
 		</constructor-arg>
+		<!-- Dependency injection from external file -->
+		<property name="email" value="${email}"></property>
+		
+		<property name="nameCompany" value="${nameCompany}"></property>
+		
 	</bean>
 	<!-- Dependency creation using a setter -->
 	<bean id="MeEmployeeClerk" class="cl.vicoga.IoC.EmployeeClerk">
 		<property name="reportCreation" ref="meReport"></property>
-		
+		<!-- Set a common value for this attributes -->
 		<property name="email" value="clerk@vicoga.cl"></property>
 		
 		<property name="nameCompany" value="vicoga"></property>
