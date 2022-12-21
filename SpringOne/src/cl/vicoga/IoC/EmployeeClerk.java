@@ -8,4 +8,10 @@ public class EmployeeClerk implements Employee {
 		return "manage boss schedule";
 	}
 
+	@Override
+	public String getReport() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

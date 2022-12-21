@@ -14,6 +14,7 @@ public class EmployeeImpl {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		Employee emp=context.getBean("meEmployee",Employee.class);
 		System.out.println(emp.getTask());
+		System.out.println(emp.getReport());
 		context.close();
 	}
 
