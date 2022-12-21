@@ -11,10 +11,14 @@
 <!-- Dependency creation -->
 <bean id="meReport" class="cl.vicoga.IoC.ReportCreationImpl">
 </bean>
-
+<!-- Dependency creation using constructor-->
 <bean id="meEmployee" class="cl.vicoga.IoC.EmployeeBoss">
 <constructor-arg ref="meReport">
 </constructor-arg>
+</bean>
+<!-- Dependency creation using a setter-->
+<bean id="MeEmployeeClerk" class="cl.vicoga.IoC.EmployeeClerk">
+<property name="reportCreation" ref="meReport"></property>
 </bean>
 
 
