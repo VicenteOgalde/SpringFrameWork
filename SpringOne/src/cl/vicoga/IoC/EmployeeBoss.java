@@ -6,6 +6,18 @@ public class EmployeeBoss implements Employee{
 	private String email;
 	private String nameCompany;
 
+	//init method execute task before the bean is available
+	
+	public void init() {
+		System.out.println("inside method init before the bean is ready");
+	}
+		
+	//destroy method execute task after the bean is use
+	public void destroy() {
+		System.out.println("inside method destroy after the bean is use");
+	}
+	
+	
 	
 	public EmployeeBoss(ReportCreation reportCreation) {
 		this.reportCreation=reportCreation;
