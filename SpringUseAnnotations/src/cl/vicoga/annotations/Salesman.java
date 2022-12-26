@@ -2,8 +2,18 @@ package cl.vicoga.annotations;
 
 import org.springframework.stereotype.Component;
 
-@Component("salesman")
+@Component
 public class Salesman implements Employee {
+	
+	private CreateFinanceReport financeReport;
+	
+
+	
+	
+	public Salesman(CreateFinanceReport financeReport) {
+		
+		this.financeReport = financeReport;
+	}
 
 	@Override
 	public String getTask() {
@@ -14,7 +24,7 @@ public class Salesman implements Employee {
 	@Override
 	public String getReport() {
 		// TODO Auto-generated method stub
-		return "report of salesman";
+		return financeReport.getFinanceReport();
 	}
 
 }
