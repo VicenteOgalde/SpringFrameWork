@@ -20,6 +20,11 @@ public class AnnotationUse2 {
 		System.out.println(emp);
 		System.out.println(emp2);
 		
+		Employee emp3= context.getBean("financeDirector",Employee.class);
+		
+		System.out.println(emp3.getTask());
+		System.out.println(emp3.getReport());
+		
 		context.close();
 	}
 
