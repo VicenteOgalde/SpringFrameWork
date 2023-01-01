@@ -1,8 +1,15 @@
 package cl.vicoga.annotations;
 
+import org.springframework.beans.factory.annotation.Value;
+
 public class FinanceDirector implements Employee {
 	
 	private CreateFinanceReport financeReport;
+	
+	@Value("${email}")
+	private String email;
+	@Value("${companyName}")
+	private String companyName;
 	
 	
 
@@ -14,7 +21,8 @@ public class FinanceDirector implements Employee {
 	@Override
 	public String getTask() {
 		// TODO Auto-generated method stub
-		return "task from the finance director";
+		return "task from the finance director \nemail:"+email
+				+" \ncompany name:"+companyName;
 	}
 
 	@Override
