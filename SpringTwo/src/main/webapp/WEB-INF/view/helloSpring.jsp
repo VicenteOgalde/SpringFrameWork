@@ -8,8 +8,7 @@
 </head>
 <body>
 
-<h1>MVC Spring</h1>
+hello ${param.meName}.
 
-<a href="showForm" >Go to Form</a>
 </body>
 </html>

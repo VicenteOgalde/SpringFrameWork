@@ -8,8 +8,14 @@
 </head>
 <body>
 
-<h1>MVC Spring</h1>
+<form action="processForm" method="get">
 
-<a href="showForm" >Go to Form</a>
+<input type="text" name="meName">
+
+<input type="submit" value="Send">
+
+
+</form>
+
 </body>
 </html>
