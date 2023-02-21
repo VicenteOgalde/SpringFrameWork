@@ -2,6 +2,8 @@ package com.vicoga.di.app.models.entities;
 
 import java.util.List;
 
+import javax.annotation.PostConstruct;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -17,7 +19,10 @@ public class Invoice {
 	private List<InvoiceItem> items;
 	
 
-
+@PostConstruct
+	public void init() {
+	this.client.setName(this.client.getName().concat(" ").concat("xin"));
+	}
 
 	public String getDescription() {
 		return description;
