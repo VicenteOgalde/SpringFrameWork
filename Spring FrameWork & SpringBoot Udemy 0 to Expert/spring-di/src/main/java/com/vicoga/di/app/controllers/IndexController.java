@@ -11,6 +11,7 @@ import com.vicoga.di.app.models.services.IService;
 @Controller
 public class IndexController {
 
+	@Autowired
 	private IService service;
 
 	@GetMapping({"/","","/index"})
@@ -19,13 +20,8 @@ public class IndexController {
 		return "index";
 	}
 	
-	public void setService(IService service) {
-		this.service = service;
-	}
+
 	
-	public IndexController(IService service) {
-		
-		this.service = service;
-	}
+	
 	
 }
