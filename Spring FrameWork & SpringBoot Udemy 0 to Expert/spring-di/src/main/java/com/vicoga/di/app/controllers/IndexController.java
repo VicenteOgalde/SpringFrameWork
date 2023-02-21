@@ -5,12 +5,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.vicoga.di.app.models.services.MeService;
+import com.vicoga.di.app.models.services.IService;
+
 
 @Controller
 public class IndexController {
 	@Autowired
-	private MeService service;
+	private IService service;
 
 	@GetMapping({"/","","/index"})
 	public String index(Model model) {
