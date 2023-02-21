@@ -4,6 +4,13 @@ public class InvoiceItem {
 
 	private Product product;
 	private Integer amount;
+	
+
+	public InvoiceItem(Product product, Integer amount) {
+		
+		this.product = product;
+		this.amount = amount;
+	}
 
 	public Product getProduct() {
 		return product;

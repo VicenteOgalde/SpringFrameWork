@@ -13,7 +13,11 @@ public class Invoice {
 	private String description;
 	@Autowired
 	private Client client;
+	@Autowired
 	private List<InvoiceItem> items;
+	
+
+
 
 	public String getDescription() {
 		return description;
