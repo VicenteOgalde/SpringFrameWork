@@ -13,7 +13,7 @@ import com.vicoga.di.app.models.services.IService;
 public class IndexController {
 
 	@Autowired
-	@Qualifier("firstService")
+	//@Qualifier("firstService")
 	private IService service;
 
 	@GetMapping({"/","","/index"})

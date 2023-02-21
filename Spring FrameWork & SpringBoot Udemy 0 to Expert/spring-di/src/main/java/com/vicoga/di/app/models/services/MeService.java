@@ -2,7 +2,7 @@ package com.vicoga.di.app.models.services;
 
 import org.springframework.stereotype.Component;
 
-@Component("firstService")
+//@Component("firstService")
 public class MeService implements IService {
 	
 	@Override
