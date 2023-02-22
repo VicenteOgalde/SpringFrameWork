@@ -1,7 +1,6 @@
 package com.vicoga.form.app.controllers;
 
-import java.util.HashMap;
-import java.util.Map;
+
 
 import javax.validation.Valid;
 
@@ -27,12 +26,13 @@ public class FormController {
 	public String formPost(@Valid User user,BindingResult result, Model model) {
 		
 		if(result.hasErrors()) {
+			/*
 			Map<String, String> errors= new HashMap<String, String>();
 			result.getFieldErrors().forEach(e->{
 				errors.put(e.getField(), e.getDefaultMessage());
-			});
-			model.addAttribute("user", user);
-			model.addAttribute("errors",errors);
+			});*/
+			
+			
 			model.addAttribute("title", "Form thymeleaf");
 			return"form";
 		}
