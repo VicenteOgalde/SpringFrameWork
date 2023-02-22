@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.vicoga.form.app.models.User;
+
 @Controller
 public class FormController {
 	@GetMapping("/form")
@@ -19,10 +21,11 @@ public class FormController {
 			@RequestParam String name,
 			@RequestParam String pass,
 			@RequestParam String email) {
+		
+		User user= new User(name,pass,email);
 		model.addAttribute("title", "Form Result");
-		model.addAttribute("name", name);
-		model.addAttribute("pass", pass);
-		model.addAttribute("email", email);
+		model.addAttribute("user", user);
+		
 		
 		
 		return"form-result";
