@@ -1,12 +1,14 @@
 package com.vicoga.form.app.models;
 
+import javax.validation.constraints.NotEmpty;
 
 public class User {
 	
+	@NotEmpty
 	private String name;
-	
+	@NotEmpty
 	private String pass;
-	
+	@NotEmpty
 	private String email;
 	
 	
