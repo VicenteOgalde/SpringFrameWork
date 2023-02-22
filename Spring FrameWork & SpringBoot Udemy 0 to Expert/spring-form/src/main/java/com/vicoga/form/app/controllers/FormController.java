@@ -17,12 +17,9 @@ public class FormController {
 		return "form";
 	}
 	@PostMapping("/form")
-	public String formPost(Model model,
-			@RequestParam String name,
-			@RequestParam String pass,
-			@RequestParam String email) {
+	public String formPost(Model model,User user) {
 		
-		User user= new User(name,pass,email);
+		//User user= new User(name,pass,email);
 		model.addAttribute("title", "Form Result");
 		model.addAttribute("user", user);
 		
