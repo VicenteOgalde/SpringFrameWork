@@ -1,13 +1,16 @@
 package com.vicoga.form.app.models;
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 public class User {
-	
-	@NotEmpty
+	@Size(min=3,max=8)
+	@NotEmpty(message = "the name cant be empty")
 	private String name;
 	@NotEmpty
 	private String pass;
+	@Email
 	@NotEmpty
 	private String email;
 	
