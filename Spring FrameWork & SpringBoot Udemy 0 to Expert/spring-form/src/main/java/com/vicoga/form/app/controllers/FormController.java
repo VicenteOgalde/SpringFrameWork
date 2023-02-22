@@ -19,6 +19,7 @@ public class FormController {
 	@GetMapping("/form")
 	public String form(Model model) {
 		model.addAttribute("title", "Form thymeleaf");
+		model.addAttribute("user",new User());
 		
 		return "form";
 	}
@@ -30,7 +31,9 @@ public class FormController {
 			result.getFieldErrors().forEach(e->{
 				errors.put(e.getField(), e.getDefaultMessage());
 			});
+			model.addAttribute("user", user);
 			model.addAttribute("errors",errors);
+			model.addAttribute("title", "Form thymeleaf");
 			return"form";
 		}
 		
