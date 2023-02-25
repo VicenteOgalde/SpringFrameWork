@@ -18,8 +18,8 @@ public class UserValidation implements Validator {
 
 	@Override
 	public void validate(Object target, Errors errors) {
-		User user=(User)target;
-		ValidationUtils.rejectIfEmpty(errors, "name", "NotEmpty.user.name");
+		//User user=(User)target;
+		//ValidationUtils.rejectIfEmpty(errors, "name", "NotEmpty.user.name");
 		
 	}
 

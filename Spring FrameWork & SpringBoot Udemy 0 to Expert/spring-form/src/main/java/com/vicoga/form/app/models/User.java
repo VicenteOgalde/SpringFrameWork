@@ -4,11 +4,16 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
+import com.vicoga.form.app.validation.RegexIdentifier;
+import com.vicoga.form.app.validation.Required;
+
 public class User {
+	@RegexIdentifier
+	private String identifier;
 	@Size(min=3,max=8)
 	@NotEmpty(message = "the name cant be empty")
 	private String name;
-	@NotEmpty
+	@Required
 	private String pass;
 	@Email
 	@NotEmpty
@@ -44,6 +49,14 @@ public class User {
 	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public String getIdentifier() {
+		return identifier;
+	}
+
+	public void setIdentifier(String identifier) {
+		this.identifier = identifier;
 	}
 	
 	
