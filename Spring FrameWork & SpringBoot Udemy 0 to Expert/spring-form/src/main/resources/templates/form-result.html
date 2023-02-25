@@ -13,7 +13,7 @@
 	<li th:text="${user.pass}"></li>
 	<li th:text="${user.email}"></li>
 	<li th:text="${user.age}"></li>
-	<li th:text="${user.dateB}"></li>
+	<li th:text="${#dates.format(user.dateB,'yyyy-MM-dd')}"></li>
 	<li th:text="${user.country}"></li>
 	</ul>
 		

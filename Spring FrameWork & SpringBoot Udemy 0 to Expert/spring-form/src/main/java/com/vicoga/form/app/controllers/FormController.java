@@ -5,7 +5,9 @@ package com.vicoga.form.app.controllers;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.validation.Valid;
 
@@ -45,6 +47,14 @@ public class FormController {
 	@ModelAttribute("countries")
 	public List<String> countries(){
 		return Arrays.asList("Spain","Mexico","Chile");
+	}
+	@ModelAttribute("countriesMap")
+	public Map<String,String> countriesMap(){
+		Map<String,String> countriesMap=new HashMap<String, String>();
+		countriesMap.put("SP", "Spain");
+		countriesMap.put("MX", "Mexico");
+		countriesMap.put("CL", "Chile");
+		return countriesMap;
 	}
 	
 	@GetMapping("/form")
