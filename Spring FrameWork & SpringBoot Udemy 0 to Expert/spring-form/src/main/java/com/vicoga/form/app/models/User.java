@@ -1,8 +1,15 @@
 package com.vicoga.form.app.models;
 
+import java.util.Date;
+
 import javax.validation.constraints.Email;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import com.vicoga.form.app.validation.RegexIdentifier;
 import com.vicoga.form.app.validation.Required;
@@ -18,6 +25,13 @@ public class User {
 	@Email
 	@NotEmpty
 	private String email;
+	@NotNull
+	@Min(18)
+	@Max(99)
+	private Integer age;
+	@NotNull
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date dateB;
 	
 	
 
@@ -57,6 +71,22 @@ public class User {
 
 	public void setIdentifier(String identifier) {
 		this.identifier = identifier;
+	}
+
+	public Integer getAge() {
+		return age;
+	}
+
+	public void setAge(Integer age) {
+		this.age = age;
+	}
+
+	public Date getDateB() {
+		return dateB;
+	}
+
+	public void setDateB(Date date) {
+		this.dateB = date;
 	}
 	
 	

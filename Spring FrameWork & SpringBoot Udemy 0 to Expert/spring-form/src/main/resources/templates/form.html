@@ -39,6 +39,22 @@
 			<div th:if="${#fields.hasErrors('email')}" 
 			th:errors="*{email}"></div>
 		</div>
+		<div>
+			<label for="age">Age</label>
+			<div>
+				<input type="number" id="age"  th:field="*{age}">
+			</div>
+			<div th:if="${#fields.hasErrors('age')}" 
+			th:errors="*{age}"></div>
+		</div>
+		<div>
+			<label for="dateB">Birth Date</label>
+			<div>
+				<input type="text" id="dateB"  th:field="*{dateB}">
+			</div>
+			<div th:if="${#fields.hasErrors('dateB')}" 
+			th:errors="*{dateB}"></div>
+		</div>
 
 		<div>
 
