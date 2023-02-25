@@ -30,7 +30,7 @@ public class User {
 	@Max(99)
 	private Integer age;
 	@NotNull
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
+//	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date dateB;
 	
 	

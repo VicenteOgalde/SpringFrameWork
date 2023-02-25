@@ -50,7 +50,7 @@
 		<div>
 			<label for="dateB">Birth Date</label>
 			<div>
-				<input type="text" id="dateB"  th:field="*{dateB}">
+				<input type="date" id="dateB"  th:field="*{dateB}">
 			</div>
 			<div th:if="${#fields.hasErrors('dateB')}" 
 			th:errors="*{dateB}"></div>
