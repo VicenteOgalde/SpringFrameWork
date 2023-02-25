@@ -33,6 +33,9 @@ public class User {
 //	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date dateB;
 	
+	@NotEmpty
+	private String country;
+	
 	
 
 	public User() {
@@ -88,6 +91,15 @@ public class User {
 	public void setDateB(Date date) {
 		this.dateB = date;
 	}
+
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+	
 	
 	
 

@@ -55,6 +55,18 @@
 			<div th:if="${#fields.hasErrors('dateB')}" 
 			th:errors="*{dateB}"></div>
 		</div>
+			<div>
+			<label for="country">Country</label>
+			<div>
+				<select  id="country"  th:field="*{country}">
+				<option value="">--Pick Your Country--</option>
+				<option th:each="country: ${countries}" th:text="${country}" th:value="${country}"></option>
+				
+				</select>
+			</div>
+			<div th:if="${#fields.hasErrors('country')}" 
+			th:errors="*{country}"></div>
+		</div>
 
 		<div>
 

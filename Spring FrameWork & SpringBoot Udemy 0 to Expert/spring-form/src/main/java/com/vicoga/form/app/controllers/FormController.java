@@ -3,7 +3,9 @@ package com.vicoga.form.app.controllers;
 
 
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
 import javax.validation.Valid;
 
@@ -15,6 +17,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.vicoga.form.app.editors.UppercaseEditor;
@@ -39,8 +42,14 @@ public class FormController {
 		
 	}
 	
+	@ModelAttribute("countries")
+	public List<String> countries(){
+		return Arrays.asList("Spain","Mexico","Chile");
+	}
+	
 	@GetMapping("/form")
 	public String form(Model model) {
+		
 		model.addAttribute("title", "Form thymeleaf");
 		model.addAttribute("user",new User());
 		
