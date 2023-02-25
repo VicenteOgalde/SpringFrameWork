@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PostMapping;
 
-
+import com.vicoga.form.app.editors.UppercaseEditor;
 import com.vicoga.form.app.models.User;
 import com.vicoga.form.app.validation.UserValidation;
 
@@ -34,6 +34,9 @@ public class FormController {
 		SimpleDateFormat dateFormat= new SimpleDateFormat("yyyy-MM-dd");
 		dateFormat.setLenient(false);
 		binder.registerCustomEditor(Date.class,"dateB",new CustomDateEditor(dateFormat,false));
+		
+		binder.registerCustomEditor(String.class, "name",new UppercaseEditor());
+		
 	}
 	
 	@GetMapping("/form")
