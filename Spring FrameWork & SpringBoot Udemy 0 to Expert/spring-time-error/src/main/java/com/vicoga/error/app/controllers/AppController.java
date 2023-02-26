@@ -10,7 +10,10 @@ public class AppController {
 	@SuppressWarnings("unused")
 	@GetMapping("/index")
 	public String index() {
-		Integer val= 100/0;
+		Integer val=0;
+		//val= 100/0;
+		val=Integer.parseInt("hola");
+		
 		return "index";
 	}
 }

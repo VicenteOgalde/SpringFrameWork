@@ -16,5 +16,12 @@ public class ErrorHandlerController {
 		model.addAttribute("status", HttpStatus.INTERNAL_SERVER_ERROR.value());
 		return"/error/arithmetic";
 	}
+	@ExceptionHandler(NumberFormatException.class)
+	public String numberFormatException(Exception ex, Model model) {
+		model.addAttribute("error","-=Number Format Error=-");
+		model.addAttribute("message", ex.getMessage());
+		model.addAttribute("status", HttpStatus.INTERNAL_SERVER_ERROR.value());
+		return"/error/number-format";
+	}
 
 }
