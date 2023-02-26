@@ -17,6 +17,7 @@ public class AppController {
 	@GetMapping("/close")
 	public String close(Model model) {
 		model.addAttribute("title","Close");
+		
 		model.addAttribute("message","Office Hours 14-18 pm");
 		
 		return"close";

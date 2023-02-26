@@ -6,9 +6,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
+@Component("schedule")
 public class TimeInterceptor implements HandlerInterceptor {
 	
 	@Value("${config.time.start}")
@@ -42,9 +44,9 @@ public class TimeInterceptor implements HandlerInterceptor {
 			ModelAndView modelAndView) throws Exception {
 		
 		String officeHours= (String) request.getAttribute("officeHours");
-		
+		if(modelAndView != null) {
 		modelAndView.addObject("officeHours", officeHours);
-		
+		}
 		
 	}
 	
