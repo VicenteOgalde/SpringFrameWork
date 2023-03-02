@@ -2,10 +2,13 @@ package com.vicoga.datajpa.app.controllers;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -34,7 +37,11 @@ public class ClientController {
 		return "form";
 	}
 	@PostMapping("/form")
-	public String save(Client client) {
+	public String save(@Valid Client client,BindingResult binding,Model model) {
+		if(binding.hasErrors()) {
+			model.addAttribute("title", "Form");
+			return"form";
+		}
 		repository.save(client);
 		
 		return"redirect:list";

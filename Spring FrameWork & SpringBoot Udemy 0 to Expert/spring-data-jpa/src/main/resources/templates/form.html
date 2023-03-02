@@ -14,19 +14,24 @@
 			<tr>
 				<td>Name</td>
 				<td><input type="text" th:field="*{name}"/></td>
+				<td><small th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></small></td>
 			</tr>
+			
 			<tr>
 				<td>Surname</td>
 				<td><input type="text" th:field="*{surname}" /></td>
+				<td><small th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}"></small></td>
 			</tr>
 			<tr>
 				<td>Email</td>
 				<td><input type="email" th:field="*{email}" /></td>
+				<td><small th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></small></td>
 			</tr>
 			<tr>
 			<tr>
 				<td>Date</td>
 				<td><input type="text" th:field="*{createdAt}" /></td>
+				<td><small th:if="${#fields.hasErrors('createdAt')}" th:errors="*{createdAt}"></small></td>
 			</tr>
 			<tr>
 				
