@@ -21,6 +21,7 @@ public class ClientController {
 	public String clientList(Model model) {
 		List<Client> clients= repository.findAll();
 		model.addAttribute("clients",clients);
+		model.addAttribute("title", "Testing JPA");
 		
 		return "list";
 	}

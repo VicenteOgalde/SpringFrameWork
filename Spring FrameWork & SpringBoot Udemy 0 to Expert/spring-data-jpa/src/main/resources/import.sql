@@ -1,0 +1,2 @@
+Insert into clients (id,name,surname,email,created_at) Values (1,'tex','tox','tt@gmail.com','2020-08-28');
+Insert into clients (id,name,surname,email,created_at) Values (2,'tax','tux','tt2@gmail.com','2021-05-23');
