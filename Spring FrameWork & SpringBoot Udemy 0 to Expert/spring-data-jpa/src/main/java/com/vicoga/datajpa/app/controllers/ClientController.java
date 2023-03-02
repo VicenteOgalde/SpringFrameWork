@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.vicoga.datajpa.app.models.dao.ClientDao;
 import com.vicoga.datajpa.app.models.entity.Client;
@@ -24,6 +25,18 @@ public class ClientController {
 		model.addAttribute("title", "Testing JPA");
 		
 		return "list";
+	}
+	@GetMapping("/form")
+	public String create(Model model) {
+		model.addAttribute("client",new Client());
+		model.addAttribute("title", "Form");
+		return "form";
+	}
+	@PostMapping("/form")
+	public String save(Client client) {
+		repository.save(client);
+		
+		return"redirect:list";
 	}
 
 }

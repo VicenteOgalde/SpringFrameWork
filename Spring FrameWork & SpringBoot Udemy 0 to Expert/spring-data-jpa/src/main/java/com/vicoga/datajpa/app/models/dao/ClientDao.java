@@ -7,6 +7,7 @@ import com.vicoga.datajpa.app.models.entity.Client;
 public interface ClientDao {
 	
 	List<Client> findAll();
+	void save(Client c);
 	
 
 }

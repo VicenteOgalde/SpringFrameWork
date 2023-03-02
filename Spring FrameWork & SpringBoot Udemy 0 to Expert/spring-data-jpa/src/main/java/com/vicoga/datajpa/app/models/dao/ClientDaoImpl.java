@@ -22,4 +22,11 @@ public class ClientDaoImpl implements ClientDao{
 		return em.createQuery("from Client",Client.class).getResultList();
 	}
 
+	@Override
+	@Transactional
+	public void save(Client c) {
+		em.persist(c);
+		
+	}
+
 }
