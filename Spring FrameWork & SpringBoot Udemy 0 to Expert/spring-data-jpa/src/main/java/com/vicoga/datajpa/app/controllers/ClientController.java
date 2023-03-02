@@ -28,6 +28,7 @@ public class ClientController {
 	}
 	@GetMapping("/form")
 	public String create(Model model) {
+		
 		model.addAttribute("client",new Client());
 		model.addAttribute("title", "Form");
 		return "form";

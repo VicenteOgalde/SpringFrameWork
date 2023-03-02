@@ -5,31 +5,35 @@
 <title th:text="${title}"></title>
 </head>
 <body>
-<h1 th:text="${title}">
-</h1>
-<table>
-<thead>
-<tr>
-<th>Id</th>
-<th>Name</th>
-<th>Surname</th>
-<th>Email</th>
-<th>Date</th>
-</tr>
+	<h1 th:text="${title}"></h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Surname</th>
+				<th>Email</th>
+				<th>Date</th>
+			</tr>
 
-</thead>
-<tbody>
-<tr th:each="cli: ${clients}" >
-<td th:text="${cli.id}"></td>
-<td th:text="${cli.name}"></td>
-<td th:text="${cli.surname}"></td>
-<td th:text="${cli.email}"></td>
-<td th:text="${cli.createdAt}"></td>
+		</thead>
+		<tbody>
+			<tr th:each="cli: ${clients}">
+				<td th:text="${cli.id}"></td>
+				<td th:text="${cli.name}"></td>
+				<td th:text="${cli.surname}"></td>
+				<td th:text="${cli.email}"></td>
+				<td th:text="${cli.createdAt}"></td>
 
-</tr>
+			</tr>
 
-</tbody>
+		</tbody>
 
-</table>
+	</table>
+	
+	<br/>
+	<br/>
+	<br/>
+	<a th:href="@{/form}">Create new Client</a>
 </body>
 </html>
