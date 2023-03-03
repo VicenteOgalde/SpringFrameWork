@@ -18,17 +18,17 @@ import org.springframework.web.bind.support.SessionStatus;
 
 import com.vicoga.datajpa.app.models.dao.ClientDao;
 import com.vicoga.datajpa.app.models.entity.Client;
+import com.vicoga.datajpa.app.models.service.ClientService;
 
 @Controller
 @SessionAttributes("client")
 public class ClientController {
-	@Autowired
-	@Qualifier("clientDaoJpa")
-	private ClientDao repository;
+
+	private ClientService service;
 
 	@GetMapping(value = "/list")
 	public String clientList(Model model) {
-		List<Client> clients = repository.findAll();
+		List<Client> clients = service.findAll();
 		model.addAttribute("clients", clients);
 		model.addAttribute("title", "Testing JPA");
 
@@ -47,7 +47,7 @@ public class ClientController {
 	public String edit(@PathVariable("id") Long id, Model model) {
 		Client c = null;
 		if (id > 0) {
-			c = repository.findById(id);
+			c = service.findById(id);
 		} else {
 
 			return "redirect:list";
@@ -63,14 +63,14 @@ public class ClientController {
 			model.addAttribute("title", "Form");
 			return "form";
 		}
-		repository.save(client);
+		service.save(client);
 		status.setComplete();
 		return "redirect:list";
 	}
 	@GetMapping("/delete/{id}")
 	public String delete(@PathVariable(value="id")Long id) {
 		if(id>0) {
-		repository.deleteById(id);
+			service.deleteById(id);
 		}
 		return "redirect:/list";
 	}
