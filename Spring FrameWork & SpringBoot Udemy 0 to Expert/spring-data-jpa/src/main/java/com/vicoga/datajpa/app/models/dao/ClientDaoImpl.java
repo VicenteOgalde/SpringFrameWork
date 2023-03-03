@@ -25,8 +25,18 @@ public class ClientDaoImpl implements ClientDao{
 	@Override
 	@Transactional
 	public void save(Client c) {
-		em.persist(c);
+		if(c.getId()!=null&&c.getId()>0) {
+		em.merge(c);
+		}else {
+			em.persist(c);
+		}
 		
+	}
+
+	@Override
+	public Client findById(Long id) {
+		
+		return em.find(Client.class, id);
 	}
 
 }
