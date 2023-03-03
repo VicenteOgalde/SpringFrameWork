@@ -33,10 +33,17 @@ public class ClientDaoImpl implements ClientDao{
 		
 	}
 
+	@Transactional(readOnly = true)
 	@Override
 	public Client findById(Long id) {
 		
 		return em.find(Client.class, id);
+	}
+	@Transactional
+	@Override
+	public void deleteById(Long id) {
+		em.remove(findById(id));
+		
 	}
 
 }

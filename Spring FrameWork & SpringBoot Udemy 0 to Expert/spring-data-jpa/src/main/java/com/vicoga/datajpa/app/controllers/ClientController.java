@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -44,27 +45,34 @@ public class ClientController {
 
 	@GetMapping("/form/{id}")
 	public String edit(@PathVariable("id") Long id, Model model) {
-Client c= null;
+		Client c = null;
 		if (id > 0) {
-c=repository.findById(id);
+			c = repository.findById(id);
 		} else {
 
 			return "redirect:list";
 		}
-model.addAttribute("title","Edit Client");
-model.addAttribute("client", c);
+		model.addAttribute("title", "Edit Client");
+		model.addAttribute("client", c);
 		return "form";
 	}
 
 	@PostMapping("/form")
-	public String save(@Valid Client client, BindingResult binding, Model model,SessionStatus status) {
+	public String save(@Valid Client client, BindingResult binding, Model model, SessionStatus status) {
 		if (binding.hasErrors()) {
 			model.addAttribute("title", "Form");
 			return "form";
 		}
 		repository.save(client);
-status.setComplete();
+		status.setComplete();
 		return "redirect:list";
+	}
+	@GetMapping("/delete/{id}")
+	public String delete(@PathVariable(value="id")Long id) {
+		if(id>0) {
+		repository.deleteById(id);
+		}
+		return "redirect:/list";
 	}
 
 }

@@ -9,6 +9,7 @@ public interface ClientDao {
 	List<Client> findAll();
 	void save(Client c);
 	Client findById(Long id);
+	void deleteById(Long id);
 	
 
 }

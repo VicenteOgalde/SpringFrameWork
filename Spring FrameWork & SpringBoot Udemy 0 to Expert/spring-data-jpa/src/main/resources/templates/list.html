@@ -15,6 +15,7 @@
 				<th>Email</th>
 				<th>Date</th>
 				<th>Edit</th>
+				<th>Delete</th>
 			</tr>
 
 		</thead>
@@ -26,6 +27,7 @@
 				<td th:text="${cli.email}"></td>
 				<td th:text="${cli.createdAt}"></td>
 				<td><a th:href="@{/form/}+${cli.id}">Edit Client</a></td>
+				<td><a th:href="@{/delete/}+${cli.id}">Delete Client</a></td>
 			</tr>
 
 		</tbody>
