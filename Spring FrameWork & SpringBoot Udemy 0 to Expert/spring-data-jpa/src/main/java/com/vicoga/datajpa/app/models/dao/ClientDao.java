@@ -1,15 +1,13 @@
 package com.vicoga.datajpa.app.models.dao;
 
-import java.util.List;
+
+
+import org.springframework.data.repository.CrudRepository;
 
 import com.vicoga.datajpa.app.models.entity.Client;
 
-public interface ClientDao {
+public interface ClientDao extends CrudRepository<Client, Long> {
 	
-	List<Client> findAll();
-	void save(Client c);
-	Client findById(Long id);
-	void deleteById(Long id);
-	
+
 
 }

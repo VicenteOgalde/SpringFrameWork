@@ -14,13 +14,12 @@ import com.vicoga.datajpa.app.models.entity.Client;
 public class ClientServiceImpl implements ClientService {
 	
 	@Autowired
-	@Qualifier("clientDaoJpa")
 	private ClientDao repository;
 	@Transactional(readOnly = true)
 	@Override
 	public List<Client> findAll() {
 		
-		return repository.findAll();
+		return (List<Client>) repository.findAll();
 	}
 	@Transactional
 	@Override
@@ -32,7 +31,7 @@ public class ClientServiceImpl implements ClientService {
 	@Override
 	public Client findById(Long id) {
 		
-		return repository.findById(id);
+		return repository.findById(id).orElse(null);
 	}
 	@Transactional
 	@Override

@@ -24,6 +24,7 @@ import com.vicoga.datajpa.app.models.service.ClientService;
 @SessionAttributes("client")
 public class ClientController {
 
+	@Autowired
 	private ClientService service;
 
 	@GetMapping(value = "/list")
