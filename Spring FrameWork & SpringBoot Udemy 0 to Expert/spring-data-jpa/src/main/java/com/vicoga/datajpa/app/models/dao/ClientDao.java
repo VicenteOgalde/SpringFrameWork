@@ -9,6 +9,8 @@ import com.vicoga.datajpa.app.models.entity.Client;
 
 public interface ClientDao extends JpaRepository<Client, Long> {
 	
+	
+	
 
 
 }

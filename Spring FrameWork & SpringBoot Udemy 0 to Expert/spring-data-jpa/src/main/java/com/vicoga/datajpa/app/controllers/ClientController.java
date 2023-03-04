@@ -6,6 +6,9 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -13,6 +16,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
@@ -28,8 +32,10 @@ public class ClientController {
 	private ClientService service;
 
 	@GetMapping(value = "/list")
-	public String clientList(Model model) {
-		List<Client> clients = service.findAll();
+	public String clientList(@RequestParam(name="page" , defaultValue = "0")int page, Model model) {
+		
+		
+		Page<Client> clients = service.findAll(PageRequest.of(page, 4));
 		model.addAttribute("clients", clients);
 		model.addAttribute("title", "Testing JPA");
 
