@@ -13,7 +13,7 @@ public class PageRender<T> {
 	private int numberOfItemsPerPage;
 	private int actualPage;
 
-	private List<PageItem> pages;
+	private List<PageItem> items;
 
 	public PageRender(String url, Page<T> page) {
 		
@@ -22,7 +22,7 @@ public class PageRender<T> {
 		this.numberOfItemsPerPage=page.getSize();
 		this.totalPages=page.getTotalPages();
 		this.actualPage=page.getNumber()+1;
-		pages= new ArrayList<PageItem>();
+		items= new ArrayList<PageItem>();
 		int from, to;
 		if (totalPages <= numberOfItemsPerPage) {
 			from = 1;
@@ -41,7 +41,7 @@ public class PageRender<T> {
 		}
 
 		for (int i = 0; i < to; i++) {
-			pages.add(new PageItem(from + i, actualPage == from + i));
+			items.add(new PageItem(from + i, actualPage == from + i));
 		}
 
 	}
@@ -86,12 +86,12 @@ public class PageRender<T> {
 		this.actualPage = actualPage;
 	}
 
-	public List<PageItem> getPages() {
-		return pages;
+	public List<PageItem> getItems() {
+		return items;
 	}
 
-	public void setPages(List<PageItem> pages) {
-		this.pages = pages;
+	public void setItems(List<PageItem> pages) {
+		this.items = pages;
 	}
 	
 	public boolean isFirst() {
