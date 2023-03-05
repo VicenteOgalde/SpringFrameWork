@@ -6,9 +6,13 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.UUID;
 
 import javax.validation.Valid;
 
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -35,6 +39,8 @@ public class ClientController {
 
 	@Autowired
 	private ClientService service;
+	
+	private final Logger log= LoggerFactory.getLogger(getClass());
 	
 	@GetMapping(value = "/show/{id}")
 	public String show(@PathVariable(value = "id")Long id,Model model) {
@@ -92,13 +98,19 @@ public class ClientController {
 			return "form";
 		}
 		if(!file.isEmpty()) {
+			String uniqueFilename= UUID.randomUUID().toString().concat("_").concat(file.getOriginalFilename());
+			Path rootPath= Paths.get("upload").resolve(uniqueFilename);
+			Path absolutePath= rootPath.toAbsolutePath();
 			
-			String rootPath= "C://Temp//upload";
+			log.info("root path: ".concat(rootPath.toString()));
+			log.info("absolute path: ".concat(absolutePath.toString()));
 			try {
+				/*
 				byte[] bytes=file.getBytes();
-				Path fullPath=Paths.get(rootPath.concat("//").concat(file.getOriginalFilename()));
-				Files.write(fullPath, bytes);
-				client.setPhoto(file.getOriginalFilename());
+				Path fullPath=Paths.get(rootPath+("//").concat(file.getOriginalFilename()));
+				Files.write(fullPath, bytes);*/
+				Files.copy(file.getInputStream(), absolutePath);
+				client.setPhoto(uniqueFilename);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
