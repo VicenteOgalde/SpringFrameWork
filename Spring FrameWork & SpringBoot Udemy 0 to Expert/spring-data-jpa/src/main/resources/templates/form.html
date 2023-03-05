@@ -6,7 +6,7 @@
 </head>
 <body>
 	<h1 th:text="${title}"></h1>
-	<form th:action="@{/form}" th:object="${client}" method="post">
+	<form th:action="@{/form}" th:object="${client}" method="post" enctype="multipart/form-data">
 		<table>
 
 		
