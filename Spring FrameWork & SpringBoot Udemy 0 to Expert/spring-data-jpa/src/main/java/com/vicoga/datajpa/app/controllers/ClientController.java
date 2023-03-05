@@ -92,8 +92,8 @@ public class ClientController {
 			return "form";
 		}
 		if(!file.isEmpty()) {
-			Path rssDirectory=Paths.get("src//main//resources//static/upload");
-			String rootPath= rssDirectory.toFile().getAbsolutePath();
+			
+			String rootPath= "C://Temp//upload";
 			try {
 				byte[] bytes=file.getBytes();
 				Path fullPath=Paths.get(rootPath.concat("//").concat(file.getOriginalFilename()));
