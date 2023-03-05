@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title th:text="${title}"></title>
+</head>
+<body>
+	<h1 th:text="${title}"></h1>
+	<div>
+	<img th:src="@{'/upload/'+${client.photo}}" th:alt="${client.photo}" style="max-width:25%">
+	<ul>
+	<li th:text="${client.name}"></li>
+	<li th:text="${client.surname}"></li>
+	<li th:text="${client.email}"></li>
+	</ul>
+	
+	
+	</div>
+
+
+
+</body>
+</html>

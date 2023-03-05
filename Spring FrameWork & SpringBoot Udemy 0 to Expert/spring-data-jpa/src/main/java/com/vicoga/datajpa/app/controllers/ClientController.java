@@ -35,12 +35,25 @@ public class ClientController {
 
 	@Autowired
 	private ClientService service;
+	
+	@GetMapping(value = "/show/{id}")
+	public String show(@PathVariable(value = "id")Long id,Model model) {
+		
+		Client c= service.findById(id);
+		if(c==null) {
+			return "redirect:/list";
+		}
+		model.addAttribute("client", c);
+		model.addAttribute("title", "-=".concat(c.getName()).concat("=-"));
+		
+		return "show";
+	}
 
 	@GetMapping(value = "/list")
 	public String clientList(@RequestParam(name="page" , defaultValue = "0")int page, Model model) {
 		
 		
-		Page<Client> clients = service.findAll(PageRequest.of(page, 4));
+		Page<Client> clients = service.findAll(PageRequest.of(page, 10));
 		PageRender<Client> pageRender= new PageRender<Client>("/list", clients);
 		
 		model.addAttribute("clients", clients);

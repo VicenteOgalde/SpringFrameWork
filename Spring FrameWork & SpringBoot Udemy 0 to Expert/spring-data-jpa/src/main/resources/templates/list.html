@@ -21,7 +21,7 @@
 		</thead>
 		<tbody>
 			<tr th:each="cli: ${clients}">
-				<td th:text="${cli.id}"></td>
+				<td><a  th:href="@{/show/}+${cli.id}"  th:text="${cli.id}"></a></td>
 				<td th:text="${cli.name}"></td>
 				<td th:text="${cli.surname}"></td>
 				<td th:text="${cli.email}"></td>
