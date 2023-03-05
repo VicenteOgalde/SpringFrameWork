@@ -2,6 +2,11 @@ package com.vicoga.datajpa.app.controllers;
 
 
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +23,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.vicoga.datajpa.app.models.entity.Client;
 import com.vicoga.datajpa.app.models.service.ClientService;
@@ -67,10 +73,23 @@ public class ClientController {
 	}
 
 	@PostMapping("/form")
-	public String save(@Valid Client client, BindingResult binding, Model model, SessionStatus status) {
+	public String save(@Valid Client client, BindingResult binding, Model model,@RequestParam("file") MultipartFile file, SessionStatus status) {
 		if (binding.hasErrors()) {
 			model.addAttribute("title", "Form");
 			return "form";
+		}
+		if(!file.isEmpty()) {
+			Path rssDirectory=Paths.get("src//main//resources//static/upload");
+			String rootPath= rssDirectory.toFile().getAbsolutePath();
+			try {
+				byte[] bytes=file.getBytes();
+				Path fullPath=Paths.get(rootPath.concat("//").concat(file.getOriginalFilename()));
+				Files.write(fullPath, bytes);
+				client.setPhoto(file.getOriginalFilename());
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		service.save(client);
 		status.setComplete();

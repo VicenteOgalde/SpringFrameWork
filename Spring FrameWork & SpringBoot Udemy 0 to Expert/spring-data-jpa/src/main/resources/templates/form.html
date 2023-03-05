@@ -28,11 +28,18 @@
 				<td><small th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></small></td>
 			</tr>
 			<tr>
+			<td>Photo</td>
+				<td><input type="file" name="file" /></td>
+				<td><small ></small></td>
+			
+			
+			</tr>
 			<tr>
 				<td>Date</td>
 				<td><input type="text" th:field="*{createdAt}" /></td>
 				<td><small th:if="${#fields.hasErrors('createdAt')}" th:errors="*{createdAt}"></small></td>
 			</tr>
+			
 			<tr>
 				
 				<td><input type="submit" value="Send" /></td>
