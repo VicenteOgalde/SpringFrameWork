@@ -3,6 +3,8 @@ package com.vicoga.datajpa.app.controllers;
 
 
 import java.io.IOException;
+import java.net.MalformedURLException;
+
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -13,10 +15,14 @@ import javax.validation.Valid;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.UrlResource;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -41,6 +47,28 @@ public class ClientController {
 	private ClientService service;
 	
 	private final Logger log= LoggerFactory.getLogger(getClass());
+	
+	
+	@GetMapping(value = "/upload/{file:.+}")
+	public ResponseEntity<Resource> showPhoto(@PathVariable String file){
+		Path pathPhoto=Paths.get("upload").resolve(file).toAbsolutePath();
+		log.info("path photo".concat(pathPhoto.toString()));
+		Resource rss=null;
+		
+		try {
+			rss=new UrlResource(pathPhoto.toUri());
+			if(!rss.exists() && !rss.isReadable()) {
+				throw new RuntimeException("Cant load the image: ".concat(pathPhoto.toString()));
+				
+			}
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return ResponseEntity.ok()
+				.header(HttpHeaders.CONTENT_DISPOSITION,"attachment; filename:\""+rss.getFilename()+"\"")
+				.body(rss);
+	}
 	
 	@GetMapping(value = "/show/{id}")
 	public String show(@PathVariable(value = "id")Long id,Model model) {
