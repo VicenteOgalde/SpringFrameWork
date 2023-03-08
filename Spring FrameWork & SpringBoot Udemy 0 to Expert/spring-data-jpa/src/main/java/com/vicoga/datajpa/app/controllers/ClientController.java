@@ -2,6 +2,7 @@ package com.vicoga.datajpa.app.controllers;
 
 
 
+import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 
@@ -126,6 +127,13 @@ public class ClientController {
 			return "form";
 		}
 		if(!file.isEmpty()) {
+			if(client.getId()!=null&&client.getId()>0&&client.getPhoto()!=null) {
+				Path pathPhoto=Paths.get("upload").resolve(client.getPhoto()).toAbsolutePath();
+				File fileName=pathPhoto.toFile();
+				if(fileName.exists()&&fileName.canRead()) {
+					fileName.delete();
+				}
+			}
 			String uniqueFilename= UUID.randomUUID().toString().concat("_").concat(file.getOriginalFilename());
 			Path rootPath= Paths.get("upload").resolve(uniqueFilename);
 			Path absolutePath= rootPath.toAbsolutePath();
@@ -151,6 +159,12 @@ public class ClientController {
 	@GetMapping("/delete/{id}")
 	public String delete(@PathVariable(value="id")Long id) {
 		if(id>0) {
+			Client c= service.findById(id);
+			Path pathPhoto=Paths.get("upload").resolve(c.getPhoto()).toAbsolutePath();
+			File file=pathPhoto.toFile();
+			if(file.length()>0&&file.canRead()) {
+				file.delete();
+			}
 			service.deleteById(id);
 		}
 		return "redirect:/list";
