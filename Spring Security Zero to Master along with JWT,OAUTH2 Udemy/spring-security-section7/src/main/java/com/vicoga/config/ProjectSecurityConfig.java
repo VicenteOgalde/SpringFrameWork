@@ -52,7 +52,13 @@ public class ProjectSecurityConfig {
                         .ignoringRequestMatchers("/register","/contact")
                         .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()))
                 .addFilterAfter(new CsrfCookieFilter(), BasicAuthenticationFilter.class)
-                .authorizeHttpRequests().requestMatchers("/my-account","/my-cards","/my-balance","/my-loans","/user").authenticated()
+                .authorizeHttpRequests()
+                .requestMatchers("/myAccount").hasAuthority("VIEWACCOUNT")
+                        .requestMatchers("/myBalance").hasAnyAuthority("VIEWACCOUNT","VIEWBALANCE")
+                        .requestMatchers("/myLoans").hasAuthority("VIEWLOANS")
+                        .requestMatchers("/myCards").hasAuthority("VIEWCARDS")
+
+                .requestMatchers("/user").authenticated()
                 .requestMatchers("/notices","/register","/contact").permitAll()
                 .and().formLogin()
                 .and().httpBasic();
