@@ -1,9 +1,6 @@
 package com.vicoga.config;
 
-import com.vicoga.filter.AuthoritiesLoggingAfterFilter;
-import com.vicoga.filter.AuthoritiesLoggingAtFilter;
-import com.vicoga.filter.CsrfCookieFilter;
-import com.vicoga.filter.RequestValidationBeforeFilter;
+import com.vicoga.filter.*;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -60,6 +57,7 @@ public class ProjectSecurityConfig {
                 .addFilterBefore(new RequestValidationBeforeFilter(),BasicAuthenticationFilter.class)
                 .addFilterAt(new AuthoritiesLoggingAtFilter(),BasicAuthenticationFilter.class)
                 .addFilterAfter(new AuthoritiesLoggingAfterFilter(),BasicAuthenticationFilter.class)
+                .addFilterAfter(new JWTTokenGeneratorFilter(),BasicAuthenticationFilter.class)
                 .authorizeHttpRequests()
                 .requestMatchers("/myAccount").hasRole("USER")
                 .requestMatchers("/myBalance").hasAnyRole("USER","ADMIN")
