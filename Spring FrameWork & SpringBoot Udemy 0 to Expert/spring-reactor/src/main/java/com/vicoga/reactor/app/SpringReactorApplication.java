@@ -20,16 +20,24 @@ public class SpringReactorApplication implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 		
-		Flux<String> names= Flux.just("name1","name2","","name3")
+		Flux<String> names= Flux.just("name1","name2","name3")
 				.doOnNext(e->{
 					if(e.isBlank()) {
 						throw new RuntimeException("name is empty");
 					}else {
 				System.out.println(e);
 				}}
-				);
+				)
+				.map(String::toUpperCase);
 		
-		names.subscribe(log::info,e->log.error(e.getMessage()));
+		names.subscribe(log::info,e->log.error(e.getMessage()),new Runnable() {
+			
+			@Override
+			public void run() {
+				log.info("end cycle");
+				
+			}
+		});
 		
 	}
 
