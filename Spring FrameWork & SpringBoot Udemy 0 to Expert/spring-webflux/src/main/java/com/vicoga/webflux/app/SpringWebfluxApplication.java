@@ -1,5 +1,7 @@
 package com.vicoga.webflux.app;
 
+import java.util.Date;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +38,10 @@ public class SpringWebfluxApplication implements CommandLineRunner{
 				new Product("tv3",2004.0),
 				new Product("tv4",2002.0),
 				new Product("tv5",2050.0))
-		.flatMap(p->repository.save(p))
+		.flatMap(p->{
+			p.setCreatedAt(new Date());
+		return repository.save(p);
+		})
 		.subscribe(p->log.info(p.getName()));
 		
 	}
