@@ -34,4 +34,12 @@ public class ProductController {
 		model.addAttribute("title", "Products List");
 		return "list";
 	}
+	
+	@GetMapping("/list-full")
+	public String productListFull(Model model) {
+		Flux<Product>products=repository.findAll().repeat(5000);
+		model.addAttribute("products", products);
+		model.addAttribute("title", "Products List");
+		return "list";
+	}
 }
