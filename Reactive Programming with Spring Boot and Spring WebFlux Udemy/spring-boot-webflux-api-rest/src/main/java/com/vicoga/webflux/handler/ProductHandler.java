@@ -2,6 +2,9 @@ package com.vicoga.webflux.handler;
 
 
 
+import java.net.URI;
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
@@ -34,6 +37,23 @@ public class ProductHandler {
 				.contentType(MediaType.APPLICATION_JSON_UTF8)
 				.body(Mono.just(p), Product.class))
 				.switchIfEmpty(ServerResponse.notFound().build());
+				
+	
+}
+	public Mono<ServerResponse> create(ServerRequest request){
+		Mono<Product> product = request.bodyToMono(Product.class);
+		
+		return product.flatMap(p->
+		{
+			if(p.getCreateAt()==null) {
+				p.setCreateAt(new Date());
+			}
+			return productService.save(p);
+		}
+				).flatMap(p->ServerResponse.created(URI.create("/api/v2/products".concat(p.getId())))
+						.contentType(MediaType.APPLICATION_JSON_UTF8)
+						.body(Mono.just(p), Product.class))
+						.switchIfEmpty(ServerResponse.noContent().build());
 				
 	
 }

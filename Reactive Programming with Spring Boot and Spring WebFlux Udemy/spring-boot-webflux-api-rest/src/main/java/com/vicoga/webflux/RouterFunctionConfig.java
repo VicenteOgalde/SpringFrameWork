@@ -20,7 +20,8 @@ public class RouterFunctionConfig {
 	@Bean
 	public RouterFunction<ServerResponse> routes(ProductHandler handler){
 		return route(GET("/api/v2/products"), handler::list)
-				.andRoute(GET("/api/v2/products/{id}"), handler::show);
+				.andRoute(GET("/api/v2/products/{id}"), handler::show)
+				.andRoute(POST("/api/v2/products/"), handler::create);
 	}
 	
 }
