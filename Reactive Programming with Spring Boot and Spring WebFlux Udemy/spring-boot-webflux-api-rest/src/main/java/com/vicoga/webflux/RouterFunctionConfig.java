@@ -21,7 +21,9 @@ public class RouterFunctionConfig {
 	public RouterFunction<ServerResponse> routes(ProductHandler handler){
 		return route(GET("/api/v2/products"), handler::list)
 				.andRoute(GET("/api/v2/products/{id}"), handler::show)
-				.andRoute(POST("/api/v2/products/"), handler::create);
+				.andRoute(POST("/api/v2/products/"), handler::create)
+				.andRoute(PUT("/api/v2/products/{id}"), handler::update)
+				.andRoute(DELETE("/api/v2/products/{id}"), handler::delete);
 	}
 	
 }

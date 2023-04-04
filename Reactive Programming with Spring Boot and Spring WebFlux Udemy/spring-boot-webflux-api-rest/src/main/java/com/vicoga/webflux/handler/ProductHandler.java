@@ -57,6 +57,40 @@ public class ProductHandler {
 				
 	
 }
+	public Mono<ServerResponse> update(ServerRequest request){
+		
+		Mono<Product> product = request.bodyToMono(Product.class);
+		
+		String id = request.pathVariable("id");
+		
+		Mono<Product> productToUpdate=productService.findById(id);
+		
+		return productToUpdate.zipWith(product,(pToUpdate,p)->{
+			pToUpdate.setName(p.getName());
+			pToUpdate.setPrice(p.getPrice());
+			pToUpdate.setCategory(p.getCategory());
+			return pToUpdate;
+		}).flatMap(p->ServerResponse.created(URI.create("/api/v2/products".concat(p.getId())))
+				.contentType(MediaType.APPLICATION_JSON_UTF8)
+				.body(productService.save(p), Product.class))
+				.switchIfEmpty(ServerResponse.notFound().build());
+				
+	
+}
+	
+public Mono<ServerResponse> delete(ServerRequest request){
+		
+		
+		
+		String id = request.pathVariable("id");
+		
+		Mono<Product> productToDelete=productService.findById(id);
+		
+		return productToDelete.flatMap(p->productService.delete(p).then(ServerResponse.noContent().build())
+				.switchIfEmpty(ServerResponse.notFound().build()));
+				
+		
+}
 	
 	
 }
