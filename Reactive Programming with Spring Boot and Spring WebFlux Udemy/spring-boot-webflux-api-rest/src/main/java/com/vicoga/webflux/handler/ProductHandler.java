@@ -11,6 +11,9 @@ import org.springframework.http.MediaType;
 import org.springframework.http.codec.multipart.FilePart;
 import org.springframework.http.codec.multipart.FormFieldPart;
 import org.springframework.stereotype.Component;
+import org.springframework.validation.BeanPropertyBindingResult;
+import org.springframework.validation.Errors;
+import org.springframework.validation.Validator;
 import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
 
@@ -18,6 +21,7 @@ import com.vicoga.webflux.models.documents.Category;
 import com.vicoga.webflux.models.documents.Product;
 import com.vicoga.webflux.models.services.ProductService;
 
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @Component
@@ -25,6 +29,9 @@ public class ProductHandler {
 
 	@Autowired
 	private ProductService productService;
+	
+	@Autowired
+	private Validator validator;
 	
 	@Value("${config.uploads.path}")
 	private String path;
@@ -48,13 +55,30 @@ public class ProductHandler {
 		Mono<Product> product = request.bodyToMono(Product.class);
 
 		return product.flatMap(p -> {
-			if (p.getCreateAt() == null) {
-				p.setCreateAt(new Date());
+			
+			Errors errors= new BeanPropertyBindingResult(p, Product.class.getName());
+			validator.validate(p, errors);
+			
+			if(errors.hasErrors()) {
+				
+				return Flux.fromIterable(errors.getFieldErrors())
+						.map(fieldError->"Attribute: ".concat(fieldError.getField()).concat(" - error:").concat(fieldError.getDefaultMessage()))
+						.collectList()
+						.flatMap(l->ServerResponse.badRequest().bodyValue(l));
+				
+			}else {
+				
+				if (p.getCreateAt() == null) {
+					p.setCreateAt(new Date());
+				}
+				return productService.save(p).flatMap(pdb -> 
+				ServerResponse.created(URI.create("/api/v2/products".concat(pdb.getId())))
+						.contentType(MediaType.APPLICATION_JSON_UTF8)
+						.body(Mono.just(pdb), Product.class))
+						.switchIfEmpty(ServerResponse.noContent().build());
 			}
-			return productService.save(p);
-		}).flatMap(p -> ServerResponse.created(URI.create("/api/v2/products".concat(p.getId())))
-				.contentType(MediaType.APPLICATION_JSON_UTF8).body(Mono.just(p), Product.class))
-				.switchIfEmpty(ServerResponse.noContent().build());
+			
+		});
 
 	}
 
