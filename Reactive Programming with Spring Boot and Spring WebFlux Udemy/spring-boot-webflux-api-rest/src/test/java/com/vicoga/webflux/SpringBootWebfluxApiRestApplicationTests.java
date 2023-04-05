@@ -103,5 +103,30 @@ class SpringBootWebfluxApiRestApplicationTests {
 		});
 		
 	}
+	
+	@Test
+	void editTest() {
+		Product product= productService.findById("TV Panasonic LCD").block();
+		
+		Category category= productService.findCategoryByName("it").block(); 
+		
+		Product productEdit = new Product("tv led", 125.23, category);
+		
+		client.put()
+		.uri("/api/v2/products/{id}",Collections.singletonMap("id", product.getId()))
+		.contentType(MediaType.APPLICATION_JSON_UTF8)
+		.accept(MediaType.APPLICATION_JSON_UTF8)
+		.body(Mono.just(productEdit),Product.class)
+		.exchange()
+		.expectStatus().isCreated()
+		.expectHeader().contentType(MediaType.APPLICATION_JSON_UTF8)
+		.expectBody()
+		.jsonPath("$.id").isNotEmpty()
+		.jsonPath("$.name").isEqualTo("tv led")
+		.jsonPath("$.category.name").isEqualTo("it");
+		
+		
+		
+	}
 
 }
