@@ -81,4 +81,10 @@ public class ProductServiceImpl implements ProductService{
 		return productRepository.findByName(name);
 	}
 
+	@Override
+	public Mono<Category> findCategoryByName(String name) {
+		
+		return categoryRepository.findByName(name);
+	}
+
 }
