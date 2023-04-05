@@ -25,6 +25,8 @@ public Flux<Product> findAll();
 	public Mono<Category> findCategoryById(String id);
 	
 	public Mono<Category> saveCategory(Category category);
+	
+	public Mono<Product> findByName(String name);
 
 
 }
