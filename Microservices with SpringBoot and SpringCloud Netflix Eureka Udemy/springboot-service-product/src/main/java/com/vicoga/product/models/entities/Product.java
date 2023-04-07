@@ -1,4 +1,4 @@
-package com.vicoga.product.models.entity;
+package com.vicoga.product.models.entities;
 
 import java.io.Serializable;
 import java.util.Date;
