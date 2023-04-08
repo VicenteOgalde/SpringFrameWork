@@ -1,4 +1,4 @@
-package com.vicoga.item.service;
+package com.vicoga.item.services;
 
 import java.util.List;
 
