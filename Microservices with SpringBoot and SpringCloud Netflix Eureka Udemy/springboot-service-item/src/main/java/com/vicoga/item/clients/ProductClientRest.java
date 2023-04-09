@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import com.vicoga.item.models.Product;
 
-@FeignClient(name="product-service",url="localhost:8001")
+@FeignClient(name="product-service")
 public interface ProductClientRest {
 
 	@GetMapping("/list")
