@@ -22,7 +22,7 @@ public class GlobalFilterTest implements GlobalFilter{
 		return chain.filter(exchange).then(Mono.fromRunnable(()->{
 			log.info("post filter");
 			exchange.getResponse().getCookies().add("color", ResponseCookie.from("color", "red").build());
-			exchange.getResponse().getHeaders().setContentType(MediaType.TEXT_PLAIN);
+			//exchange.getResponse().getHeaders().setContentType(MediaType.TEXT_PLAIN);
 		}));
 	}
 
