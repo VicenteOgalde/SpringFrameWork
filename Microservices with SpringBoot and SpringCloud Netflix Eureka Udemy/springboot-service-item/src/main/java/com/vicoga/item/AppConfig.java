@@ -25,12 +25,16 @@ public class AppConfig {
 		return factory -> factory.configureDefault(id->{
 			return new Resilience4JConfigBuilder(id)
 					.circuitBreakerConfig(CircuitBreakerConfig.custom()
-							.slidingWindowSize(10)
+							.slidingWindowSize(10)//number of calls to evaluate
 							.failureRateThreshold(50)//% of failure 
-							.waitDurationInOpenState(Duration.ofSeconds(10L))//duration of the alternative path
-							.permittedNumberOfCallsInHalfOpenState(5)
+							.waitDurationInOpenState(Duration.ofSeconds(10L))//duration of the open state
+							.permittedNumberOfCallsInHalfOpenState(5)//receive 5 call on half open state and decide for open or close state
+							.slowCallRateThreshold(50)//% of slow calls for use open state
+							.slowCallDurationThreshold(Duration.ofSeconds(2L))
 							.build())
-					.timeLimiterConfig(TimeLimiterConfig.ofDefaults())
+					.timeLimiterConfig(TimeLimiterConfig.custom()
+							.timeoutDuration(Duration.ofSeconds(3L))
+							.build())
 					.build();
 		});
 	}
