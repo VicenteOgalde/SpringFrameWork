@@ -2,6 +2,8 @@ package com.vicoga.item.controllers;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.cloud.client.circuitbreaker.CircuitBreakerFactory;
@@ -21,6 +23,8 @@ public class ItemController {
 	@Autowired
 	private CircuitBreakerFactory circuitBreakerFactory;
 	
+	private Logger log = LoggerFactory.getLogger(ItemController.class);
+	
 	@Autowired
 	@Qualifier("serviceFeign")
 	private ItemService service;
@@ -34,10 +38,13 @@ public class ItemController {
 	@GetMapping("/show/{id}/amount/{amount}")
 	public Item show(@PathVariable Long id,@PathVariable Integer amount) {
 		return circuitBreakerFactory.create("items")
-				.run(()-> service.findById(id, amount),e->alternativeMethod(id, amount));
+				.run(()-> service.findById(id, amount),e->alternativeMethod(id, amount,e));
 	}
 	
-	public Item alternativeMethod(Long id,Integer amount) {
+	public Item alternativeMethod(Long id,Integer amount,Throwable e) {
+		
+		log.info("Error: ".concat(e.getMessage()));
+		
 		Item i= new Item(new Product("default product"),amount);
 		i.getProduct().setId(id);
 		i.getProduct().setPrice(1000.0);
