@@ -16,4 +16,3 @@ resilience4j:
     instances:
       items:
         base-config: default-config
-   
