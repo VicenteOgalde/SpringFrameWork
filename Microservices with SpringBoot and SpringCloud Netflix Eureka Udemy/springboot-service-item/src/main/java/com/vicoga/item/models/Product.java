@@ -8,6 +8,14 @@ public class Product {
 	private String name;
 	private Double price;
 	private Date createdAt;
+	
+	
+	public Product() {
+		
+	}
+	public Product(String name) {
+		this.name=name;
+	}
 	public Long getId() {
 		return id;
 	}
