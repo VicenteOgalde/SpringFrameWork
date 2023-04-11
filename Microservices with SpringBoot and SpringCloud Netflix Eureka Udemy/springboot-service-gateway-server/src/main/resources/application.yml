@@ -1,3 +1,22 @@
+resilience4j:
+  circuitbreaker:
+    configs:
+      default-config:
+        sliding-window-size: 6
+        failure-rate-threshold: 50
+        wait-duration-in-open-state: 20s
+        permitted-number-of-calls-in-half-open-state: 4
+    instances:
+      products:
+        base-config: default-config
+  timelimitter:
+    configs:
+      default-config:
+        timeout-duration: 6s
+    instances:
+      products:
+        base-config: default-config
+        
 spring:
   cloud:
     gateway:
@@ -7,6 +26,11 @@ spring:
         predicates:
           - Path=/api/products/**
         filters:
+          - name: CircuitBreaker
+            args:
+              name: products
+              statusCodes: 500
+              fallbackUri: forward:/api/items/show/1/amount/1
           - StripPrefix=2 
           - name: Test
             args:

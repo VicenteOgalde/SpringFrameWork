@@ -52,7 +52,7 @@ public class ItemController {
 		return service.findById(id, amount);
 	}
 	
-	@CircuitBreaker(name="items")
+	@CircuitBreaker(name="items",fallbackMethod ="alternativeMethod2" )
 	@TimeLimiter(name = "items")
 	@GetMapping("/show3/{id}/amount/{amount}")
 	public CompletableFuture <Item> show3(@PathVariable Long id,@PathVariable Integer amount) {
