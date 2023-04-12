@@ -31,14 +31,16 @@ public class ProductServiceImpl implements ProductService{
 	}
 
 	@Override
+	@Transactional
 	public Product save(Product product) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return repository.save(product);
 	}
 
 	@Override
+	@Transactional
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+		repository.deleteById(id);
 		
 	}
 
