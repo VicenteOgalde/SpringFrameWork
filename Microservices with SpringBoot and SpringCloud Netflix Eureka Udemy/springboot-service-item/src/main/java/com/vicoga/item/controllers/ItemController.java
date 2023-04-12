@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.circuitbreaker.CircuitBreakerFactory;
+import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,8 +32,12 @@ public class ItemController {
 	
 	@Autowired
 	private CircuitBreakerFactory circuitBreakerFactory;
+	
 	@Value("${config.text}")
 	private String text;
+	
+	@Autowired
+	private Environment environment;
 	
 	private Logger log = LoggerFactory.getLogger(ItemController.class);
 	
@@ -90,6 +95,10 @@ public class ItemController {
 	@GetMapping("/get-config")
 	public ResponseEntity<?> getConfig(@Value("${server.port}") String port){
 		Map<String,String> json= new HashMap<String, String>();
+		if(environment.getActiveProfiles().length>0 && environment.getActiveProfiles()[0].equals("dev")) {
+			json.put("author.name", environment.getProperty("config.author.name"));
+		}
+		
 		json.put("text", text);
 		json.put("port", port);
 		return new ResponseEntity<Map<String,String>>(json,HttpStatus.OK);
