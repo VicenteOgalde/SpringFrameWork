@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.vicoga.item.clients.ProductClientRest;
 import com.vicoga.item.models.Item;
+import com.vicoga.item.models.Product;
 @Service("serviceFeign")
 @Primary
 public class ItemServiceFeign implements ItemService{
@@ -26,6 +27,24 @@ public class ItemServiceFeign implements ItemService{
 	public Item findById(Long id, Integer amount) {
 		
 		return new Item(clientFeign.findById(id),amount);
+	}
+
+	@Override
+	public Product save(Product product) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Product update(Product product, Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void delete(Long id) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

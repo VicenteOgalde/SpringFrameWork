@@ -15,4 +15,5 @@ public interface ProductClientRest {
 	public List<Product> list();
 	@GetMapping("/show/{id}")
 	public Product findById(@PathVariable Long id);
+	
 }
