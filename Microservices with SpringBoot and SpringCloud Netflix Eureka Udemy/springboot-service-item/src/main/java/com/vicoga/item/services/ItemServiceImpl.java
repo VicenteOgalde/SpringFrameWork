@@ -14,7 +14,7 @@ import org.springframework.web.client.RestTemplate;
 import com.vicoga.item.models.Item;
 import com.vicoga.item.models.Product;
 
-@Service
+@Service("restTemplate")
 public class ItemServiceImpl implements ItemService {
 	
 	@Autowired

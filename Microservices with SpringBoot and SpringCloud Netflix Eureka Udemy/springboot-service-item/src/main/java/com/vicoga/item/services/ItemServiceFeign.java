@@ -11,7 +11,6 @@ import com.vicoga.item.clients.ProductClientRest;
 import com.vicoga.item.models.Item;
 import com.vicoga.item.models.Product;
 @Service("serviceFeign")
-@Primary
 public class ItemServiceFeign implements ItemService{
 	
 	@Autowired
