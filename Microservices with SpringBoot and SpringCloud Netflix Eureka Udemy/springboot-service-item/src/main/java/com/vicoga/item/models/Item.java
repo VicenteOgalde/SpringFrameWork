@@ -1,5 +1,7 @@
 package com.vicoga.item.models;
 
+import com.vicoga.commons.models.entities.Product;
+
 public class Item {
 
 	private Product product;

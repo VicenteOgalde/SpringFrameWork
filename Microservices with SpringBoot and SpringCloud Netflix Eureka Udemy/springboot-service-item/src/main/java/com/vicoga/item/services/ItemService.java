@@ -2,8 +2,9 @@ package com.vicoga.item.services;
 
 import java.util.List;
 
+import com.vicoga.commons.models.entities.Product;
 import com.vicoga.item.models.Item;
-import com.vicoga.item.models.Product;
+
 
 public interface ItemService {
 	

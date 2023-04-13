@@ -26,8 +26,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.vicoga.commons.models.entities.Product;
 import com.vicoga.item.models.Item;
-import com.vicoga.item.models.Product;
+
 import com.vicoga.item.services.ItemService;
 
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
@@ -106,7 +107,8 @@ public class ItemController {
 		
 		log.info("Error: ".concat(e.getMessage()));
 		
-		Item i= new Item(new Product("default product"),amount);
+		Item i= new Item(new Product(),amount);
+		i.getProduct().setName("default product");
 		i.getProduct().setId(id);
 		i.getProduct().setPrice(1000.0);
 		return i;
@@ -117,7 +119,8 @@ public class ItemController {
 		
 		log.info("Error: ".concat(e.getMessage()));
 		
-		Item i= new Item(new Product("default product"),amount);
+		Item i= new Item(new Product(),amount);
+		i.getProduct().setName("default product");
 		i.getProduct().setId(id);
 		i.getProduct().setPrice(1000.0);
 		return CompletableFuture.supplyAsync(()-> i) ;

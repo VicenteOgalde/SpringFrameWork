@@ -11,8 +11,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import com.vicoga.commons.models.entities.Product;
 import com.vicoga.item.models.Item;
-import com.vicoga.item.models.Product;
+
 
 @Service("restTemplate")
 public class ItemServiceImpl implements ItemService {

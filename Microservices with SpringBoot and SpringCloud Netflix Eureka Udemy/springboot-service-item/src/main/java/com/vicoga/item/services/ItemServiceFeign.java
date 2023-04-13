@@ -7,9 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
+import com.vicoga.commons.models.entities.Product;
 import com.vicoga.item.clients.ProductClientRest;
 import com.vicoga.item.models.Item;
-import com.vicoga.item.models.Product;
+
 @Service("serviceFeign")
 public class ItemServiceFeign implements ItemService{
 	

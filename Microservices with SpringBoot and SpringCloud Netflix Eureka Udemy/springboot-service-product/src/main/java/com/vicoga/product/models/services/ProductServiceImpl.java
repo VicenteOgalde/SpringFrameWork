@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.vicoga.product.models.entities.Product;
+import com.vicoga.commons.models.entities.Product;
 import com.vicoga.product.models.repositories.ProductRepository;
 @Service
 public class ProductServiceImpl implements ProductService{

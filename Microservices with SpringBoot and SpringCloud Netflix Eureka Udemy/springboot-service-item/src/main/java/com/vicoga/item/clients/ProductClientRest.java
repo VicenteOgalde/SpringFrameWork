@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import com.vicoga.item.models.Product;
+import com.vicoga.commons.models.entities.Product;
+
 
 @FeignClient(name="product-service")
 public interface ProductClientRest {

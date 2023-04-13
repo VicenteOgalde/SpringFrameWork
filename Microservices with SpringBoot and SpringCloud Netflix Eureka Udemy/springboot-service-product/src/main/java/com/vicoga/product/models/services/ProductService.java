@@ -2,7 +2,7 @@ package com.vicoga.product.models.services;
 
 import java.util.List;
 
-import com.vicoga.product.models.entities.Product;
+import com.vicoga.commons.models.entities.Product;
 
 public interface ProductService {
 	
