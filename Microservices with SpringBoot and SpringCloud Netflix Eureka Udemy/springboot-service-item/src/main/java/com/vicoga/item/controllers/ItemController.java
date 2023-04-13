@@ -49,7 +49,7 @@ public class ItemController {
 	private Logger log = LoggerFactory.getLogger(ItemController.class);
 	
 	@Autowired
-	@Qualifier("restTemplate")
+	@Qualifier("serviceFeign")
 	private ItemService service;
 	
 	@GetMapping("/list")

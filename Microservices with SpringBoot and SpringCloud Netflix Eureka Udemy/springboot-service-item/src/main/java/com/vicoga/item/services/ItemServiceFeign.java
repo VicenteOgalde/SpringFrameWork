@@ -30,19 +30,19 @@ public class ItemServiceFeign implements ItemService{
 
 	@Override
 	public Product save(Product product) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return clientFeign.create(product);
 	}
 
 	@Override
 	public Product update(Product product, Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return clientFeign.update(product, id);
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+		clientFeign.delete(id);
 		
 	}
 
