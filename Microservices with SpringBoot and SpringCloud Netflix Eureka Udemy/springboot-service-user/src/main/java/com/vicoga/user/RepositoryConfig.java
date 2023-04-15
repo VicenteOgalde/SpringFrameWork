@@ -5,8 +5,8 @@ import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 
-import com.vicoga.user.models.entities.Role;
-import com.vicoga.user.models.entities.User;
+import com.vicoga.commons.user.models.entities.*;
+
 
 @Configuration
 public class RepositoryConfig implements RepositoryRestConfigurer{

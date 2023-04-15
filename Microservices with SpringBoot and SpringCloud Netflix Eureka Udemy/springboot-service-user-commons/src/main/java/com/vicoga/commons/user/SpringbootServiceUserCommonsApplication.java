@@ -1,4 +1,4 @@
-package com.vicoga.user.commons;
+package com.vicoga.commons.user;
 
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

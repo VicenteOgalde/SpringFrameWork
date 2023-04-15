@@ -5,7 +5,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.data.rest.core.annotation.RestResource;
 
-import com.vicoga.user.models.entities.User;
+import com.vicoga.commons.user.models.entities.User;
 @RepositoryRestResource(path = "v01")
 public interface UserRepository extends PagingAndSortingRepository<User, Long> {
 

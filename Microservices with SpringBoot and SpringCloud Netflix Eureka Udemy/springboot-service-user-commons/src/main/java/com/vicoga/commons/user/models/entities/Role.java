@@ -1,4 +1,4 @@
-package com.vicoga.user.commons.models.entities;
+package com.vicoga.commons.user.models.entities;
 
 import java.io.Serializable;
 
