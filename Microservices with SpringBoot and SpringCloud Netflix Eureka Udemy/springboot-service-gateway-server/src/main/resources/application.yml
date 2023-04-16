@@ -51,4 +51,10 @@ spring:
         predicates:
           - Path=/api/users/**
         filters:
+          - StripPrefix=2
+      - id: oauth-service
+        uri: lb://oauth-service
+        predicates:
+          - Path=/api/security/**
+        filters:
           - StripPrefix=2 

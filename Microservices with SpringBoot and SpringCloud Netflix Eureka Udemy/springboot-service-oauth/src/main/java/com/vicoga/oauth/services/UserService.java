@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 import com.vicoga.commons.user.models.entities.User;
 import com.vicoga.oauth.clients.UserFeignClient;
 @Service
-public class UserService implements UserDetailsService{
+public class UserService implements  IUserService,UserDetailsService{
 	
 	private UserFeignClient client;
 
@@ -35,6 +35,12 @@ public class UserService implements UserDetailsService{
 		return new org.springframework.security.core.userdetails.User(
 				user.getName(), user.getPassword(), user.getEnabled(),
 				true, true, true, roles);
+	}
+
+	@Override
+	public User findByUsername(String username) {
+		
+		return client.findByUsername(username);
 	}
 
 }
