@@ -13,6 +13,7 @@
   <packaging>pom</packaging>
   <modules>
     <module>mcsv-users</module>
+    <module>mcsv-course</module>
   </modules>
   <name>Archetype - kubernetes-springcloud</name>
   <url>http://maven.apache.org</url>
