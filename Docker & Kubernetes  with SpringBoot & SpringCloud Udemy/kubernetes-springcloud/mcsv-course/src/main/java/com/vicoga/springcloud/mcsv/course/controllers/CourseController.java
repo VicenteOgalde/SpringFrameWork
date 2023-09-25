@@ -27,6 +27,7 @@ public class CourseController {
         if(o.isPresent()){
             return ResponseEntity.ok(o.get());
         }
+        return ResponseEntity.notFound().build();
     }
 
 }
