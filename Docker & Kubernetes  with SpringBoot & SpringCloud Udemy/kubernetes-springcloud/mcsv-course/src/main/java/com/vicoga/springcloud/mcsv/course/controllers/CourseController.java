@@ -34,4 +34,15 @@ public class CourseController {
         return ResponseEntity.status(HttpStatus.CREATED).body(course1);
 
     }
+    @PutMapping("/{id}")
+    public ResponseEntity<?> edit(@RequestBody Course course,@PathVariable Long id){
+        Optional<Course> optionalCourse=service.findById(id);
+        if (optionalCourse.isPresent()){
+            optionalCourse.get().setName(course.getName());
+            return ResponseEntity.status(HttpStatus.CREATED).body(service.save(optionalCourse.get()));
+
+        }
+        return ResponseEntity.notFound().build();
+    }
+
 }
