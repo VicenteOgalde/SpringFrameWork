@@ -44,5 +44,13 @@ public class CourseController {
         }
         return ResponseEntity.notFound().build();
     }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> delete(@PathVariable Long id){
+        if(service.findById(id).isPresent()){
+            service.deleteById(id);
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.notFound().build();
 
+    }
 }
