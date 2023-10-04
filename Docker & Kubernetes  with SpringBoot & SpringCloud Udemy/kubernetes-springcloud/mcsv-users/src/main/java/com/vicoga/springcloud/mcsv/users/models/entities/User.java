@@ -1,6 +1,8 @@
 package com.vicoga.springcloud.mcsv.users.models.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name = "users")
@@ -9,10 +11,13 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotEmpty
     private String name;
+    @NotEmpty
+    @Email
     @Column(unique = true)
     private String email;
-
+    @NotEmpty
     private String password;
 
     public Long getId() {

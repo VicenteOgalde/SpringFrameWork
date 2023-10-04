@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5fc12ee-7df1-4899-a29f-c6a070fa623b" name="Changes" comment="commit 13">
+    <list default="true" id="d5fc12ee-7df1-4899-a29f-c6a070fa623b" name="Changes" comment="commit 13.1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mcsv-course/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/mcsv-course/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mcsv-users/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mcsv-users/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mcsv-users/src/main/java/com/vicoga/springcloud/mcsv/users/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mcsv-users/src/main/java/com/vicoga/springcloud/mcsv/users/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mcsv-users/src/main/java/com/vicoga/springcloud/mcsv/users/models/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/mcsv-users/src/main/java/com/vicoga/springcloud/mcsv/users/models/entities/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +50,7 @@
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.McsvUsersApplication">
+  <component name="RunManager" selected="Application.McsvCourseApplication">
     <configuration name="McsvCourseApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.vicoga.springcloud.mcsv.course.McsvCourseApplication" />
       <module name="mcsv-course" />
@@ -77,8 +79,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.McsvUsersApplication" />
         <item itemvalue="Application.McsvCourseApplication" />
+        <item itemvalue="Application.McsvUsersApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -219,7 +221,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696147400385</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="commit 13.1">
+      <option name="closed" value="true" />
+      <created>1696235993533</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1696235993534</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -240,6 +250,7 @@
     <MESSAGE value="commit 12.1" />
     <MESSAGE value="commit 12.2" />
     <MESSAGE value="commit 13" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit 13" />
+    <MESSAGE value="commit 13.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit 13.1" />
   </component>
 </project>
