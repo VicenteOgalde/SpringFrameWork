@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5fc12ee-7df1-4899-a29f-c6a070fa623b" name="Changes" comment="commit 13.1">
+    <list default="true" id="d5fc12ee-7df1-4899-a29f-c6a070fa623b" name="Changes" comment="commit 14">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mcsv-users/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mcsv-users/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mcsv-course/src/main/java/com/vicoga/springcloud/mcsv/course/controllers/CourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mcsv-course/src/main/java/com/vicoga/springcloud/mcsv/course/controllers/CourseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mcsv-course/src/main/java/com/vicoga/springcloud/mcsv/course/entity/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/mcsv-course/src/main/java/com/vicoga/springcloud/mcsv/course/entity/Course.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mcsv-users/src/main/java/com/vicoga/springcloud/mcsv/users/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mcsv-users/src/main/java/com/vicoga/springcloud/mcsv/users/controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mcsv-users/src/main/java/com/vicoga/springcloud/mcsv/users/models/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/mcsv-users/src/main/java/com/vicoga/springcloud/mcsv/users/models/entities/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -229,7 +229,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696235993534</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="commit 14">
+      <option name="closed" value="true" />
+      <created>1696394175861</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1696394175861</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -251,6 +259,7 @@
     <MESSAGE value="commit 12.2" />
     <MESSAGE value="commit 13" />
     <MESSAGE value="commit 13.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit 13.1" />
+    <MESSAGE value="commit 14" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit 14" />
   </component>
 </project>

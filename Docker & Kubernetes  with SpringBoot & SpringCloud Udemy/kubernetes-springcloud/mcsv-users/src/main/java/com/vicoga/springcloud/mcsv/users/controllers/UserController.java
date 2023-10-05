@@ -46,6 +46,10 @@ public class UserController {
     @PutMapping("/{id}")
     public ResponseEntity<?> edit(@Valid @RequestBody User user, BindingResult result, @PathVariable Long id){
 
+        if (result.hasErrors()){
+            return validation(result);
+        }
+
         Optional<User> optionalUser= userService.findById(id);
         if(optionalUser.isPresent()){
             User userDB= optionalUser.get();
