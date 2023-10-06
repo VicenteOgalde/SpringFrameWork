@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5fc12ee-7df1-4899-a29f-c6a070fa623b" name="Changes" comment="commit 15">
+    <list default="true" id="d5fc12ee-7df1-4899-a29f-c6a070fa623b" name="Changes" comment="commit 15.1">
+      <change afterPath="$PROJECT_DIR$/mcsv-course/src/main/java/com/vicoga/springcloud/mcsv/course/entity/CourseUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mcsv-users/src/main/java/com/vicoga/springcloud/mcsv/users/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mcsv-users/src/main/java/com/vicoga/springcloud/mcsv/users/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mcsv-course/src/main/java/com/vicoga/springcloud/mcsv/course/entity/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/mcsv-course/src/main/java/com/vicoga/springcloud/mcsv/course/entity/Course.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -251,7 +252,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696566201160</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="commit 15.1">
+      <option name="closed" value="true" />
+      <created>1696567020465</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1696567020465</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -276,6 +285,7 @@
     <MESSAGE value="commit 14" />
     <MESSAGE value="commit 14.1" />
     <MESSAGE value="commit 15" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit 15" />
+    <MESSAGE value="commit 15.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit 15.1" />
   </component>
 </project>
