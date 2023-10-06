@@ -9,10 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 @RestController
 public class UserController {
@@ -35,7 +32,11 @@ public class UserController {
     @PostMapping
     //@ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<?> create(@Valid @RequestBody User user, BindingResult result){
-
+        if(userService.findByEmail(user.getEmail()).isPresent()){
+            return ResponseEntity.badRequest()
+                    .body(Collections
+                            .singletonMap("message","already exist an user with this email ".concat(user.getEmail())));
+        }
         if(result.hasErrors()){
             return validation(result);
         }
@@ -53,6 +54,12 @@ public class UserController {
         Optional<User> optionalUser= userService.findById(id);
         if(optionalUser.isPresent()){
             User userDB= optionalUser.get();
+            if(!user.getEmail().equalsIgnoreCase(userDB.getEmail()) && userService.findByEmail(user.getEmail()).isPresent()){
+                return ResponseEntity.badRequest()
+                        .body(Collections
+                                .singletonMap("message","already exist an user with this email ".concat(user.getEmail())));
+            }
+
             userDB.setName(user.getName());
             userDB.setEmail(user.getEmail());
             userDB.setPassword(user.getPassword());
