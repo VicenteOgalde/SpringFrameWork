@@ -32,13 +32,13 @@ public class UserController {
     @PostMapping
     //@ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<?> create(@Valid @RequestBody User user, BindingResult result){
-        if(userService.findByEmail(user.getEmail()).isPresent()){
+        if(result.hasErrors()){
+            return validation(result);
+        }
+        if(!user.getEmail().isBlank()&& userService.findByEmail(user.getEmail()).isPresent()){
             return ResponseEntity.badRequest()
                     .body(Collections
                             .singletonMap("message","already exist an user with this email ".concat(user.getEmail())));
-        }
-        if(result.hasErrors()){
-            return validation(result);
         }
 
         return ResponseEntity.status(HttpStatus.CREATED).body(userService.save(user));
@@ -54,7 +54,7 @@ public class UserController {
         Optional<User> optionalUser= userService.findById(id);
         if(optionalUser.isPresent()){
             User userDB= optionalUser.get();
-            if(!user.getEmail().equalsIgnoreCase(userDB.getEmail()) && userService.findByEmail(user.getEmail()).isPresent()){
+            if(!user.getEmail().isBlank() && !user.getEmail().equalsIgnoreCase(userDB.getEmail()) && userService.findByEmail(user.getEmail()).isPresent()){
                 return ResponseEntity.badRequest()
                         .body(Collections
                                 .singletonMap("message","already exist an user with this email ".concat(user.getEmail())));
