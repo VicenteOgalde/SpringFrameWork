@@ -1,6 +1,6 @@
 package com.vicoga.springcloud.mcsv.course.services;
 
-import com.vicoga.springcloud.mcsv.course.entity.Course;
+import com.vicoga.springcloud.mcsv.course.models.entity.Course;
 import com.vicoga.springcloud.mcsv.course.repository.CourseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

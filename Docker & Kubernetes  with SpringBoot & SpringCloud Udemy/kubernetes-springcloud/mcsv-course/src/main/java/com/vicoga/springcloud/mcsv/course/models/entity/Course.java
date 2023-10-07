@@ -1,5 +1,6 @@
-package com.vicoga.springcloud.mcsv.course.entity;
+package com.vicoga.springcloud.mcsv.course.models.entity;
 
+import com.vicoga.springcloud.mcsv.course.models.User;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 
@@ -15,10 +16,14 @@ public class Course {
     @NotBlank
     private String name;
     @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true)
+    @JoinColumn(name = "course_id")
     private List<CourseUser> courseUsers;
+    @Transient
+    private List<User> users;
 
     public Course() {
         courseUsers= new ArrayList<>();
+        users= new ArrayList<>();
     }
 
     public Long getId() {
@@ -49,5 +54,13 @@ public class Course {
 
     public void setCourseUsers(List<CourseUser> courseUsers) {
         this.courseUsers = courseUsers;
+    }
+
+    public List<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(List<User> users) {
+        this.users = users;
     }
 }

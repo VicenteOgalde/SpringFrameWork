@@ -1,4 +1,4 @@
-package com.vicoga.springcloud.mcsv.course.entity;
+package com.vicoga.springcloud.mcsv.course.models.entity;
 
 import jakarta.persistence.*;
 

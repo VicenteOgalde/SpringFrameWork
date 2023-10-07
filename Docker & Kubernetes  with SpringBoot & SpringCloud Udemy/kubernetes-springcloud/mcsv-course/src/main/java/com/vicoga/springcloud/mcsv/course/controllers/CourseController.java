@@ -1,6 +1,6 @@
 package com.vicoga.springcloud.mcsv.course.controllers;
 
-import com.vicoga.springcloud.mcsv.course.entity.Course;
+import com.vicoga.springcloud.mcsv.course.models.entity.Course;
 import com.vicoga.springcloud.mcsv.course.services.CourseService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
