@@ -1,5 +1,6 @@
 package com.vicoga.springcloud.mcsv.course.services;
 
+import com.vicoga.springcloud.mcsv.course.models.User;
 import com.vicoga.springcloud.mcsv.course.models.entity.Course;
 import com.vicoga.springcloud.mcsv.course.repository.CourseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,5 +33,20 @@ public class CourseServiceImpl implements CourseService {
     @Override
     public void deleteById(Long id) {
         repository.deleteById(id);
+    }
+
+    @Override
+    public Optional<User> assignUser(User user, Long id) {
+        return Optional.empty();
+    }
+
+    @Override
+    public Optional<User> createUser(User user, Long courseId) {
+        return Optional.empty();
+    }
+
+    @Override
+    public Optional<User> unAssignUser(User user, Long courseId) {
+        return Optional.empty();
     }
 }
