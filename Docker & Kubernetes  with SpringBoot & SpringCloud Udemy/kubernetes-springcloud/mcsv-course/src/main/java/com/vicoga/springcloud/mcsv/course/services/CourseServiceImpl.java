@@ -1,5 +1,6 @@
 package com.vicoga.springcloud.mcsv.course.services;
 
+import com.vicoga.springcloud.mcsv.course.clients.UserClientRest;
 import com.vicoga.springcloud.mcsv.course.models.User;
 import com.vicoga.springcloud.mcsv.course.models.entity.Course;
 import com.vicoga.springcloud.mcsv.course.repository.CourseRepository;
@@ -14,6 +15,8 @@ public class CourseServiceImpl implements CourseService {
 
     @Autowired
     private CourseRepository repository;
+    @Autowired
+    private UserClientRest userClientRest;
     @Transactional(readOnly = true)
     @Override
     public List<Course> findAll() {
