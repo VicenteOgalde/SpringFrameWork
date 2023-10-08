@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5fc12ee-7df1-4899-a29f-c6a070fa623b" name="Changes" comment="commit 18">
-      <change afterPath="$PROJECT_DIR$/mcsv-course/src/main/java/com/vicoga/springcloud/mcsv/course/clients/UserClientRest.java" afterDir="false" />
+    <list default="true" id="d5fc12ee-7df1-4899-a29f-c6a070fa623b" name="Changes" comment="commit 19">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mcsv-course/src/main/java/com/vicoga/springcloud/mcsv/course/McsvCourseApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/mcsv-course/src/main/java/com/vicoga/springcloud/mcsv/course/McsvCourseApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mcsv-course/src/main/java/com/vicoga/springcloud/mcsv/course/services/CourseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mcsv-course/src/main/java/com/vicoga/springcloud/mcsv/course/services/CourseServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -284,7 +283,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696649066862</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="commit 19">
+      <option name="closed" value="true" />
+      <created>1696649754065</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1696649754065</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -313,6 +320,7 @@
     <MESSAGE value="commit 16" />
     <MESSAGE value="commit 17" />
     <MESSAGE value="commit 18" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit 18" />
+    <MESSAGE value="commit 19" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit 19" />
   </component>
 </project>
