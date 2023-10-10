@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5fc12ee-7df1-4899-a29f-c6a070fa623b" name="Changes" comment="commit 20">
+    <list default="true" id="d5fc12ee-7df1-4899-a29f-c6a070fa623b" name="Changes" comment="commit 21">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mcsv-course/src/main/java/com/vicoga/springcloud/mcsv/course/controllers/CourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mcsv-course/src/main/java/com/vicoga/springcloud/mcsv/course/controllers/CourseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mcsv-users/src/main/java/com/vicoga/springcloud/mcsv/users/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mcsv-users/src/main/java/com/vicoga/springcloud/mcsv/users/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mcsv-users/src/main/java/com/vicoga/springcloud/mcsv/users/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mcsv-users/src/main/java/com/vicoga/springcloud/mcsv/users/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mcsv-users/src/main/java/com/vicoga/springcloud/mcsv/users/services/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mcsv-users/src/main/java/com/vicoga/springcloud/mcsv/users/services/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +50,7 @@
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.McsvCourseApplication">
+  <component name="RunManager" selected="Application.McsvUsersApplication">
     <configuration name="McsvCourseApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.vicoga.springcloud.mcsv.course.McsvCourseApplication" />
       <module name="mcsv-course" />
@@ -77,8 +79,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.McsvCourseApplication" />
         <item itemvalue="Application.McsvUsersApplication" />
+        <item itemvalue="Application.McsvCourseApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -299,12 +301,19 @@
       <option name="project" value="LOCAL" />
       <updated>1696742112358</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="commit 21">
+      <option name="closed" value="true" />
+      <created>1696829717280</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1696829717280</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="commit 2" />
     <MESSAGE value="commit 3" />
     <MESSAGE value="commit 4" />
     <MESSAGE value="commit 5" />
@@ -329,6 +338,7 @@
     <MESSAGE value="commit 18" />
     <MESSAGE value="commit 19" />
     <MESSAGE value="commit 20" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit 20" />
+    <MESSAGE value="commit 21" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit 21" />
   </component>
 </project>

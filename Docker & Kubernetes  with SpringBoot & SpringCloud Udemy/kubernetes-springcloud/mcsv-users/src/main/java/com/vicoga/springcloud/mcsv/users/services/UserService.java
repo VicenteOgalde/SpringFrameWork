@@ -12,5 +12,7 @@ public interface UserService {
     User save(User user);
     void deleteById(Long id);
 
+    List<User> listById(Iterable<Long> ids);
+
     Optional<User> findByEmail(String email);
 }
