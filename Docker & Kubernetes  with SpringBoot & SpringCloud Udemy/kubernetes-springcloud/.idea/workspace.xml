@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5fc12ee-7df1-4899-a29f-c6a070fa623b" name="Changes" comment="commit 23">
+    <list default="true" id="d5fc12ee-7df1-4899-a29f-c6a070fa623b" name="Changes" comment="commit 24">
+      <change afterPath="$PROJECT_DIR$/mcsv-users/src/main/java/com/vicoga/springcloud/mcsv/users/clients/CourseClientRest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mcsv-course/src/main/java/com/vicoga/springcloud/mcsv/course/controllers/CourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mcsv-course/src/main/java/com/vicoga/springcloud/mcsv/course/controllers/CourseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mcsv-course/src/main/java/com/vicoga/springcloud/mcsv/course/repository/CourseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/mcsv-course/src/main/java/com/vicoga/springcloud/mcsv/course/repository/CourseRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mcsv-course/src/main/java/com/vicoga/springcloud/mcsv/course/services/CourseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mcsv-course/src/main/java/com/vicoga/springcloud/mcsv/course/services/CourseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mcsv-course/src/main/java/com/vicoga/springcloud/mcsv/course/services/CourseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mcsv-course/src/main/java/com/vicoga/springcloud/mcsv/course/services/CourseServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mcsv-users/src/main/java/com/vicoga/springcloud/mcsv/users/McsvUsersApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/mcsv-users/src/main/java/com/vicoga/springcloud/mcsv/users/McsvUsersApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mcsv-users/src/main/java/com/vicoga/springcloud/mcsv/users/services/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mcsv-users/src/main/java/com/vicoga/springcloud/mcsv/users/services/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +19,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -80,8 +80,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.McsvUsersApplication" />
         <item itemvalue="Application.McsvCourseApplication" />
+        <item itemvalue="Application.McsvUsersApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -326,12 +326,19 @@
       <option name="project" value="LOCAL" />
       <updated>1696999458917</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="commit 24">
+      <option name="closed" value="true" />
+      <created>1697001175710</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1697001175710</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="commit 5" />
     <MESSAGE value="commit 6" />
     <MESSAGE value="commit 7" />
     <MESSAGE value="commit 8" />
@@ -356,6 +363,7 @@
     <MESSAGE value="commit 21" />
     <MESSAGE value="commit 22" />
     <MESSAGE value="commit 23" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit 23" />
+    <MESSAGE value="commit 24" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit 24" />
   </component>
 </project>

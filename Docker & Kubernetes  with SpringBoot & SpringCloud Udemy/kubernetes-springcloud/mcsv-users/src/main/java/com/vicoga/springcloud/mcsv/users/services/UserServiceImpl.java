@@ -1,5 +1,6 @@
 package com.vicoga.springcloud.mcsv.users.services;
 
+import com.vicoga.springcloud.mcsv.users.clients.CourseClientRest;
 import com.vicoga.springcloud.mcsv.users.models.entities.User;
 import com.vicoga.springcloud.mcsv.users.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,9 @@ import java.util.Optional;
 public class UserServiceImpl implements UserService{
     @Autowired
     private UserRepository repository;
+
+    @Autowired
+    private CourseClientRest courseClientRest;
     @Override
     @Transactional(readOnly = true)
     public List<User> findAll() {
@@ -33,7 +37,9 @@ public class UserServiceImpl implements UserService{
     @Override
     @Transactional
     public void deleteById(Long id) {
+
         repository.deleteById(id);
+        courseClientRest.deleteCourseUserById(id);
     }
     @Transactional(readOnly = true)
     @Override
