@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5fc12ee-7df1-4899-a29f-c6a070fa623b" name="Changes" comment="commit 22">
+    <list default="true" id="d5fc12ee-7df1-4899-a29f-c6a070fa623b" name="Changes" comment="commit 23">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mcsv-course/src/main/java/com/vicoga/springcloud/mcsv/course/clients/UserClientRest.java" beforeDir="false" afterPath="$PROJECT_DIR$/mcsv-course/src/main/java/com/vicoga/springcloud/mcsv/course/clients/UserClientRest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mcsv-course/src/main/java/com/vicoga/springcloud/mcsv/course/controllers/CourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mcsv-course/src/main/java/com/vicoga/springcloud/mcsv/course/controllers/CourseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mcsv-course/src/main/java/com/vicoga/springcloud/mcsv/course/repository/CourseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/mcsv-course/src/main/java/com/vicoga/springcloud/mcsv/course/repository/CourseRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mcsv-course/src/main/java/com/vicoga/springcloud/mcsv/course/services/CourseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mcsv-course/src/main/java/com/vicoga/springcloud/mcsv/course/services/CourseService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mcsv-course/src/main/java/com/vicoga/springcloud/mcsv/course/services/CourseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mcsv-course/src/main/java/com/vicoga/springcloud/mcsv/course/services/CourseServiceImpl.java" afterDir="false" />
     </list>
@@ -318,12 +318,19 @@
       <option name="project" value="LOCAL" />
       <updated>1696921300198</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="commit 23">
+      <option name="closed" value="true" />
+      <created>1696999458917</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1696999458917</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="commit 4" />
     <MESSAGE value="commit 5" />
     <MESSAGE value="commit 6" />
     <MESSAGE value="commit 7" />
@@ -348,6 +355,7 @@
     <MESSAGE value="commit 20" />
     <MESSAGE value="commit 21" />
     <MESSAGE value="commit 22" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit 22" />
+    <MESSAGE value="commit 23" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit 23" />
   </component>
 </project>

@@ -40,6 +40,14 @@ public class CourseServiceImpl implements CourseService {
     public void deleteById(Long id) {
         repository.deleteById(id);
     }
+
+    @Override
+    @Transactional
+    public void deleteCourseUserById(Long id) {
+        repository.deleteCourseUserById(id);
+
+    }
+
     @Transactional(readOnly = true)
     @Override
     public Optional<Course> findByIdWithUsers(Long id) {
