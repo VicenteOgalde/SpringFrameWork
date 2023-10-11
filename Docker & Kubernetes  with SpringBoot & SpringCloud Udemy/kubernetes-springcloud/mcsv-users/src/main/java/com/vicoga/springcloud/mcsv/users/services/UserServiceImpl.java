@@ -35,7 +35,7 @@ public class UserServiceImpl implements UserService{
     public void deleteById(Long id) {
         repository.deleteById(id);
     }
-
+    @Transactional(readOnly = true)
     @Override
     public List<User> listById(Iterable<Long> ids) {
         return (List<User>) repository.findAllById(ids);

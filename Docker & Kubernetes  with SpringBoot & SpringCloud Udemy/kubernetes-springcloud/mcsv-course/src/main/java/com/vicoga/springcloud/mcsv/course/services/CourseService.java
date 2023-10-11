@@ -13,7 +13,7 @@ public interface CourseService {
     Course save(Course course);
     void deleteById(Long id);
 
-
+    Optional<Course> findByIdWithUsers(Long id);
     Optional<User> assignUser(User user,Long courseId);
     Optional<User> createUser(User user, Long courseId);
     Optional<User> unAssignUser(User user,Long courseId);
