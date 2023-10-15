@@ -1,9 +1,12 @@
 FROM amazoncorretto:17.0.2
 
-WORKDIR /app
+WORKDIR /app/mcsv-users
 
-COPY ./target/mcsv-users-0.0.1-SNAPSHOT.jar .
+COPY ./pom.xml /app
+COPY ./mcsv-users .
+
+RUN ./mvnw clean package -DskipTests
 
 EXPOSE 8001
 
-ENTRYPOINT ["java","-jar","mcsv-users-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java","-jar","./target/mcsv-users-0.0.1-SNAPSHOT.jar"]
