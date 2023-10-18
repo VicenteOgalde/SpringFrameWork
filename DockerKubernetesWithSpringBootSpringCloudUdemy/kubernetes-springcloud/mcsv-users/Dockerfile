@@ -1,4 +1,4 @@
-FROM amazoncorretto:17.0.2
+FROM amazoncorretto:17-alpine-jdk as builder
 
 WORKDIR /app/mcsv-users
 
@@ -12,6 +12,8 @@ RUN ./mvnw clean package -Dmaven.test.skip -Dmaven.main.skip -Dspring-boot.repac
 COPY ./mcsv-users/src ./src
 
 RUN ./mvnw clean package -DskipTests
+
+FROM amazoncorretto:17-alpine-jdk
 
 EXPOSE 8001
 
